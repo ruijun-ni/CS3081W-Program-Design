@@ -2,6 +2,7 @@
 #include "routing/depth_first_search.h"
 #include "routing_api.h"
 #include "graph.h"
+
 using namespace routing;
 
 DfsStrategy::DfsStrategy(Vector3 position, Vector3 destination, const IGraph* graph) {
@@ -22,8 +23,7 @@ DfsStrategy::DfsStrategy(Vector3 position, Vector3 destination, const IGraph* gr
     
     path = graph->GetPath(start, end, DepthFirstSearch::Default());
 
-    float distance = 0;
-
+    distance = 0;
     for (int i = 1; i < path.size(); i++) {
         float prev_x = path[i - 1][0];
         float prev_z = path[i - 1][1];
@@ -33,10 +33,10 @@ DfsStrategy::DfsStrategy(Vector3 position, Vector3 destination, const IGraph* gr
         float curr_z = path[i][1];
         float curr_y = path[i][2];
 
-        distance += sqrt(pow(prev_x - curr_x, 2) + pow(prev_y - curr_y, 2) +
+        this->distance += sqrt(pow(prev_x - curr_x, 2) + pow(prev_y - curr_y, 2) +
                 pow(prev_z - curr_z, 2));
     }
-    std::cout << "The total distance for this route is " << distance << std::endl;
+    std::cout << "The total distance for Dfs route is " << distance << std::endl;
 
     currentIndex = 0;
     maxIndex = path.size()-1;

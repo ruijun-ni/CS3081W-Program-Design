@@ -61,6 +61,11 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
   }
 }
 
+// bool Drone::canArrive() {
+//   float totalDis = toTargetPosStrategy->distance + toTargetDestStrategy->distance;
+//   return (bat->GetBattery() * 70) >= totalDis;
+// }
+
 void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
   if (available) {
     GetNearestEntity(scheduler);

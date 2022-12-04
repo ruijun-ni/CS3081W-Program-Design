@@ -6,6 +6,7 @@
 #include "IEntity.h"
 #include "IStrategy.h"
 #include "math/vector3.h"
+#include "BatteryDecorator.h"
 
 // Represents a drone in a physical system.
 // Drones move using euler integration based on a specified
@@ -32,6 +33,8 @@ class Drone : public IEntity {
 
   void GetNearestEntity(std::vector<IEntity*> scheduler);
 
+  bool canArrive();
+
   // Updates the drone's position
   void Update(double dt, std::vector<IEntity*> scheduler);
 
@@ -53,6 +56,7 @@ class Drone : public IEntity {
   Drone& operator=(const Drone& drone) = delete;
 
  private:
+  BatteryDecorator* bat = NULL;
   JsonObject details;
   Vector3 position;
   Vector3 direction;
