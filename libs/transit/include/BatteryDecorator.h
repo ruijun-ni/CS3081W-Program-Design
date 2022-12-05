@@ -16,7 +16,15 @@ class BatteryDecorator : public Drone {
   // bool CheckBattery(){
   //   return battery > 10;
   // }
+  bool CheckArrive() {
+    float totalDis = drone->toTargetPosStrategy->distance + drone->toTargetDestStrategy->distance;
+    return (GetBattery() * 70) >= totalDis;
+  }
   
+  void update(){
+    drone->Update();
+
+  }
 
  private:
   IEntity* drone;
