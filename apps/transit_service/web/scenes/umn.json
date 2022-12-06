@@ -40,14 +40,13 @@
         }
     },
     {
-    "command": "CreateEntity",
+        "command": "CreateEntity",
       	"params": {
             "type": "Station",
             "name": "Station",
-            "mesh": "assets/model/Station.glb",
-            "position": [500, 240, 300],
-            "scale": [0.1, 0.1, 0.1],
-
+            "mesh": "assets/model/station.glb",
+            "position": [520, 330, 288],
+            "scale": [0.008, 0.008, 0.008],
       	    "rotation": [0, 0, 0, 0],
             "direction": [1,0,0],
             "speed": 0,

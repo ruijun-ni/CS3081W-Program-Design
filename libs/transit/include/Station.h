@@ -30,9 +30,9 @@ class Station : public IEntity {
 
   void SetDestination(Vector3 des_) { destination = des_; }
 
-  void Rotate(double angle);
+  // void Rotate(double angle);
 
-  void Update(double dt, std::vector<IEntity*> scheduler);
+  // void Update(double dt, std::vector<IEntity*> scheduler);
 
   float Random(float Min, float Max);
 
