@@ -58,6 +58,8 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
         toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
         toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
     } 
+    // to check if the chrone still has the battery to go to the charge station after finish the task
+    toStationStrategy = new BeelineStrategy(nearestEntity->GetDestination(), {520, 330, 288});
   }
 }
 
@@ -90,6 +92,17 @@ void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
         nearestEntity = NULL;
     }
   }  
+}
+
+void Drone::FlyToCharge(double dt, std::vector<IEntity*> scheduler) {
+  toChargeStrategy = new BeelineStrategy(this->GetPosition(), {520, 330, 288});
+  toChargeStrategy->Move(this, dt);
+  if(toChargeStrategy->IsCompleted()){
+    delete toChargeStrategy;
+    toChargeStrategy = NULL;
+    // available = true;
+  }
+  
 }
 
 void Drone::Rotate(double angle) {
