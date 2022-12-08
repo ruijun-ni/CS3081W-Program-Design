@@ -86,10 +86,10 @@ void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
     nearestEntity->SetPosition(this->GetPosition());
     nearestEntity->SetDirection(this->GetDirection());
     if(toTargetDestStrategy->IsCompleted()){
-        delete toTargetDestStrategy;
-        toTargetDestStrategy = NULL;
-        available = true;
-        nearestEntity = NULL;
+      delete toTargetDestStrategy;
+      toTargetDestStrategy = NULL;
+      available = true;
+      nearestEntity = NULL;
     }
   }  
 }

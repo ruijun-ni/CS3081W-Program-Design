@@ -32,6 +32,8 @@ class BatteryDecorator : public Drone {
     }
   }
 
+  
+
  private:
   IEntity* drone;
   float battery;

@@ -52,7 +52,9 @@ void DijkstraStrategy::Move(IEntity* entity, double dt){
     currentPos = currentPos + direction * speed * dt;
     entity->SetPosition(currentPos);
     entity->SetDirection(direction);
-    
+    // update the battery status
+    float update_battery = entity->GetBattery() - destination.Distance(currentPos) * 0.0125;
+
     if((destination - currentPos).Magnitude()<1.0){
         currentIndex++;
     }
