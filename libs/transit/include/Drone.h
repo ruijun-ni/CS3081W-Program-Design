@@ -13,6 +13,7 @@
 class Drone : public IEntity {
  public:
   // Drones are created with a name
+
   Drone(JsonObject& obj);
   // Destructor
   ~Drone();
@@ -50,6 +51,14 @@ class Drone : public IEntity {
   void Rotate(double angle);
 
   void Jump(double height);
+
+  IStrategy* getTargetPosStrategy() {return toTargetPosStrategy;}
+
+  IStrategy* getTargetDestStrategy() {return toTargetDestStrategy;}
+
+  IStrategy* getStationStrategy() {return toStationStrategy;}
+
+  IStrategy* getChargeStrategy() {return toChargeStrategy;}
 
   // Removing the copy constructor and assignment operator
   // so that drones cannot be coppied.
