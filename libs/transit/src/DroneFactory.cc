@@ -5,9 +5,8 @@ IEntity* DroneFactory::CreateEntity(JsonObject& entity){
   std::string type = entity["type"];
   if(type.compare("drone") == 0){
     std::cout << "Drone Created" << std::endl;
-
-    IEntity* drone = new Drone(entity);
-    IEntity* battery = new BatteryDecorator(drone);
+    Drone* DroneA = new Drone(entity);
+    BatteryDecorator* battery = new BatteryDecorator(DroneA);
     return battery;
   }
   return nullptr;
