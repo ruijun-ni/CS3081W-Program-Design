@@ -15,10 +15,13 @@ class Singleton {
   Singleton();
   ~Singleton();
   void AddPassenger();
-  void AddDistance(double d);
+  void AddTripDistance(double d);
+  void AddTotalDistance(double d);
   void AddTime(double t);
   void write2CSV();
   static Singleton* GetInstance();
+  void ClearDistance();
+  void ClearTime();
 };
 
 #endif  // SINGLETON_H_

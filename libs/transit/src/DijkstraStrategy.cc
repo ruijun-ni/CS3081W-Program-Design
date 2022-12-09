@@ -42,7 +42,8 @@ void DijkstraStrategy::Move(IEntity* entity, double dt){
     float speed = entity->GetSpeed();
     
     // collect distance per drone
-    s->AddDistance(speed * dt); 
+    s->AddTripDistance(speed * dt); 
+    s->AddTotalDistance(speed * dt); 
 
     currentPos = currentPos + direction * speed * dt;
     entity->SetPosition(currentPos);
