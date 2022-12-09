@@ -8,6 +8,7 @@
 #include <vector>
 #include "IStrategy.h"
 #include "IEntity.h"
+#include "Singleton.h"
 /**
  * @brief this class inhertis from the IStrategy class and is responsible for generating the beeline that the drone will take.
  */

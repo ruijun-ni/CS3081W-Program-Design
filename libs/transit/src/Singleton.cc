@@ -24,6 +24,18 @@ void Singleton::AddTime(double t) {
   cout << "time: " << data["time"] << endl;
 }
 
+void Singleton::write2CSV() { 
+    cout << "Writing to CSV..." << endl;
+    std::ofstream myfile;
+    myfile.open ("data.csv");
+    myfile << "drone, num of passengers dilevered, traveling distance, traveling time\n";
+    myfile << "drone1, ";
+    myfile << to_string(data["passenger_delivered"]) + ", ";
+    myfile << to_string(data["distance_traveled"]) + ", ";
+    myfile << to_string(data["time"]) + "\n";
+    myfile.close();
+}
+
 // static method
 Singleton *Singleton::GetInstance(){
   if (instance == nullptr) {

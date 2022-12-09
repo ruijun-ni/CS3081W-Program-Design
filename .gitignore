@@ -32,3 +32,6 @@
 build
 
 .vscode
+
+# csv files created
+*.csv

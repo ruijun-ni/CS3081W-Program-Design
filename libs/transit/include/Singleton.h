@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <unordered_map>
+#include <fstream>
 using namespace std;
 
 class Singleton {
@@ -16,6 +17,7 @@ class Singleton {
   void AddPassenger();
   void AddDistance(double d);
   void AddTime(double t);
+  void write2CSV();
   static Singleton* GetInstance();
 };
 
