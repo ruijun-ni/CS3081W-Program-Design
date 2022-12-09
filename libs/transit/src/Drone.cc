@@ -39,6 +39,9 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
   }
 
   if(nearestEntity){
+    Singleton* s = Singleton::GetInstance();
+    s->AddPassenger();
+
     nearestEntity->SetAvailability(false);  // set availability to the nearest entity
     available = false;
     pickedUp = false;
