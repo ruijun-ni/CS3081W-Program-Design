@@ -55,6 +55,13 @@ void DfsStrategy::Move(IEntity* entity, double dt){
     entity->SetPosition(currentPos);
     entity->SetDirection(direction);
     
+    // if (currPath == 0) {
+    //     currPath = destination.Distance(currentPos);
+    // }
+    // else {
+    //     currPath = currPath - destination.Distance(currentPos);
+    // }
+
     if((destination - currentPos).Magnitude()<1.0){
         currentIndex++;
     }

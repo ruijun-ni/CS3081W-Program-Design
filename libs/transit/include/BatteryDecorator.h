@@ -5,8 +5,9 @@
 #include "IEntity.h"
 #include <unistd.h>     //required for sleep()
 
-class BatteryDecorator : public Drone {
+class BatteryDecorator : public IEntity {
  public:
+
   BatteryDecorator(Drone* drone_);
   
   ~BatteryDecorator() {};
@@ -17,8 +18,26 @@ class BatteryDecorator : public Drone {
 
   bool canArrive();
   
-  void update(double dt, std::vector<IEntity*> scheduler);
+  void Update(double dt, std::vector<IEntity*> scheduler);
+
+  float GetSpeed() const { return drone->GetSpeed(); }
+
+  Vector3 GetPosition() const { return drone->GetPosition(); }
+
+  Vector3 GetDirection() const { return drone->GetDirection(); }
+
+  Vector3 GetDestination() const { return drone->GetDestination(); }
+
+  JsonObject GetDetails() const { return drone->GetDetails(); }
+
+  bool GetAvailability() const { return drone->GetAvailability(); }
+
+  void SetGraph(const IGraph* graph) { 
+    std::cout<<"*****here*****"<<std::endl;
+    drone->SetGraph(graph); }
   
+  bool isCharge = false;
+
  private:
   Drone* drone;
   float battery;

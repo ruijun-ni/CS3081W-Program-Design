@@ -31,7 +31,7 @@ class IEntity {
   virtual std::string GetStrategyName(){}
   virtual void SetAvailability(bool choice) {}
   virtual void Update(double dt, std::vector<IEntity*> scheduler) {}
-  void SetGraph(const IGraph* graph) { this->graph = graph; }
+  virtual void SetGraph(const IGraph* graph) { this->graph = graph; }
   virtual void SetPosition(Vector3 pos_) {}
   virtual void SetDirection(Vector3 dir_) {}
   virtual void SetDestination(Vector3 des_) {}

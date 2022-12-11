@@ -35,7 +35,7 @@ class Drone : public IEntity {
 
   bool canArrive();
 
-  void FlyToCharge(double dt, std::vector<IEntity*> scheduler);
+  bool FlyToCharge(double dt, std::vector<IEntity*> scheduler);
 
   // Updates the drone's position
   void Update(double dt, std::vector<IEntity*> scheduler);
@@ -51,6 +51,8 @@ class Drone : public IEntity {
   void Rotate(double angle);
 
   void Jump(double height);
+
+  float getConsumption() { return consumption; }
 
   IStrategy* getTargetPosStrategy() {return toTargetPosStrategy;}
 
@@ -81,6 +83,7 @@ class Drone : public IEntity {
   IStrategy* toTargetDestStrategy = NULL;
   IStrategy* toStationStrategy = NULL;
   IStrategy* toChargeStrategy = NULL;
+  float consumption;
 };
 
 #endif

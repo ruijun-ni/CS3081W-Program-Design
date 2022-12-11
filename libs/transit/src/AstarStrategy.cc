@@ -2,6 +2,7 @@
 #include "routing/astar.h"
 #include "routing_api.h"
 #include "graph.h"
+#include <iostream>
 using namespace routing;
 
 AstarStrategy::AstarStrategy(Vector3 position, Vector3 destination, const IGraph* graph) {
@@ -52,6 +53,19 @@ void AstarStrategy::Move(IEntity* entity, double dt){
     entity->SetPosition(currentPos);
     entity->SetDirection(direction);
     
+    // if (currPath == 0) {
+    //     currPath = destination.Distance(currentPos);
+    // }
+    // else {
+    //     currPath = currPath - destination.Distance(currentPos);
+    // }
+    // std::cout << "currentPos" << currentPos.x << "   " << currentPos.z << std::endl;
+    // std::cout << "destination" << destination.x << "   " << destination.z << std::endl;
+    // std::cout << dt << std::endl;
+    // currPath += sqrt(pow(currentPos.x - destination.x, 2) + pow(currentPos.y - destination.y, 2) +
+    //             pow(currentPos.z - destination.z, 2));
+
+    // std::cout << currPath << std::endl;
     if((destination - currentPos).Magnitude()<1.0){
         currentIndex++;
     }

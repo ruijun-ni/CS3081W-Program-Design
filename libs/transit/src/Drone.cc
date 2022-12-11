@@ -69,9 +69,6 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
 // }
 
 void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
-  if (available) {
-    GetNearestEntity(scheduler);
-  }
 
   if(toTargetPosStrategy){
     toTargetPosStrategy->Move(this, dt);
@@ -81,7 +78,6 @@ void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
     }
   } else if (toTargetDestStrategy) {
     toTargetDestStrategy->Move(this, dt);
-    
     // Moving the robot
     nearestEntity->SetPosition(this->GetPosition());
     nearestEntity->SetDirection(this->GetDirection());
@@ -94,15 +90,16 @@ void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
   }  
 }
 
-void Drone::FlyToCharge(double dt, std::vector<IEntity*> scheduler) {
+bool Drone::FlyToCharge(double dt, std::vector<IEntity*> scheduler) {
   toChargeStrategy = new BeelineStrategy(this->GetPosition(), {520, 330, 288});
   toChargeStrategy->Move(this, dt);
   if(toChargeStrategy->IsCompleted()){
     delete toChargeStrategy;
     toChargeStrategy = NULL;
     // available = true;
+    return true;
   }
-  
+  return false;
 }
 
 void Drone::Rotate(double angle) {
