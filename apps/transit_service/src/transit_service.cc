@@ -52,6 +52,7 @@ public:
                 // Send updated entities
                 SendEntity("UpdateEntity", *it->second, false);
             }
+            ShowBattery();
         }
     }
 
@@ -103,6 +104,12 @@ public:
         JsonObject details;
         details["id"] = id;
         SendEventToView("RemovePath", details);
+    }
+
+    void ShowBattery() {
+        JsonObject details;
+        details["battery"] = model.ShowBattery();
+        SendEventToView("UpdateBattery", details);
     }
 
     /// Allows messages to be passed back to the view

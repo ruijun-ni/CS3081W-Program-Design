@@ -29,6 +29,9 @@ class SimulationModel {
   // Adds a new entity type
   void AddFactory(IEntityFactory* factory);
 
+  // Shows the battery level of Drone
+  float ShowBattery();
+
  protected:
   IController& controller;
   std::vector<IEntity*> entities;

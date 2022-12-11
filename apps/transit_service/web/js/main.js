@@ -88,6 +88,10 @@ $( document ).ready(function() {
           //console.log(data);
           removeEntity(data.details.id);
         }
+        if (data.event == "UpdateBattery") {
+          var battery = document.getElementById("battery");
+          battery.innerHTML = data.details.battery.toFixed(2);          
+        }
       }
     }
   }

@@ -2,6 +2,7 @@
 #include "DroneFactory.h"
 #include "RobotFactory.h"
 #include "StationFactory.h"
+#include "BatteryDecorator.h"
 
 SimulationModel::SimulationModel(IController& controller)
     : controller(controller) {
@@ -57,4 +58,15 @@ void SimulationModel::Update(double dt) {
 
 void SimulationModel::AddFactory(IEntityFactory* factory) {
   compFactory->AddFactory(factory);
+}
+
+float SimulationModel::ShowBattery() {
+  for (auto entity : entities) {
+    JsonObject detailsTemp = entity->GetDetails();
+    std::string nameTemp = detailsTemp["name"];
+    if (nameTemp.compare("Drone") == 0) {
+      BatteryDecorator* b = (BatteryDecorator*) entity;
+      return b->GetBattery();
+    }
+  }
 }
