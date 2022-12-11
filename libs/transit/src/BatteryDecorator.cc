@@ -9,7 +9,7 @@ void Delay(int time) {
 
 BatteryDecorator::BatteryDecorator(Drone* drone_) {
     drone = drone_;
-    battery = 100;
+    battery = 30;
 }
 
 
@@ -33,11 +33,14 @@ void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler) {
         if (drone->GetAvailability()) {
         std::cout << "0000000000000" << std::endl;
         drone->GetNearestEntity(scheduler);
+        if (drone->getTargetPosStrategy() != NULL){
+            check = canArrive();
+        }
         }
         std::cout << "11111111111111" << std::endl;
         if (drone->getTargetPosStrategy() != NULL){
             std::cout << "222222222222" << std::endl;
-            if (canArrive()){
+            if (check){
                 std::cout << "33333333333333" << std::endl;
                 drone->Update(dt, scheduler);
                 SetBattery(battery - dt*30.0*0.01);

@@ -41,6 +41,7 @@ class BatteryDecorator : public IEntity {
  private:
   Drone* drone;
   float battery;
+  bool check;
 };
 
 #endif  // BATTERY_DECORATOR_H_
