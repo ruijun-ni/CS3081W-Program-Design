@@ -52,21 +52,13 @@ void Singleton::ClearTime() {
   data["trip_time"] = 0.0;
 }
 
-double Singleton::GetTotalDistance() {
-  return data["distance_traveled"];
-}
+double Singleton::GetTotalDistance() { return data["distance_traveled"]; }
 
-double Singleton::GetTripDistance() {
-  return data["trip_distance"];
-}
+double Singleton::GetTripDistance() { return data["trip_distance"]; }
 
-double Singleton::GetTotalTime() {
-  return data["time_elapsed"];
-}
+double Singleton::GetTotalTime() { return data["time_elapsed"]; }
 
-double Singleton::GetTripTime() {
-  return data["trip_time"];
-}
+double Singleton::GetTripTime() { return data["trip_time"]; }
 
 // static method
 Singleton* Singleton::GetInstance() {

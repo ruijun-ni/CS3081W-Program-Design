@@ -1,9 +1,10 @@
 #include "BatteryDecorator.h"
-#include "Singleton.h"
 
 #include <unistd.h>
 
 #include <ctime>
+
+#include "Singleton.h"
 
 BatteryDecorator::BatteryDecorator(Drone* drone_) {
   drone = drone_;

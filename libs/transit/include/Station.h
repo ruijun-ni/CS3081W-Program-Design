@@ -4,9 +4,9 @@
 #include <vector>
 
 #include "IEntity.h"
+#include "IStrategy.h"
 #include "math/vector3.h"
 #include "util/json.h"
-#include "IStrategy.h"
 
 class Station : public IEntity {
  public:
@@ -41,7 +41,7 @@ class Station : public IEntity {
  private:
   JsonObject details;
   Vector3 position;
-  
+
   Vector3 direction;
   Vector3 destination;
   IStrategy* strategy = NULL;

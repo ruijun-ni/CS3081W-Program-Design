@@ -4,16 +4,15 @@
 #include "IEntityFactory.h"
 
 class CompositeFactory : public IEntityFactory {
-  public:
+ public:
+  IEntity* CreateEntity(JsonObject& entity);
 
-    IEntity* CreateEntity(JsonObject& entity);
+  void AddFactory(IEntityFactory* factoryEntity);
 
-    void AddFactory(IEntityFactory* factoryEntity);
-    
-    virtual ~CompositeFactory();
+  virtual ~CompositeFactory();
 
-  private:
-    std::vector<IEntityFactory*> componentFactories;
+ private:
+  std::vector<IEntityFactory*> componentFactories;
 };
 
 #endif

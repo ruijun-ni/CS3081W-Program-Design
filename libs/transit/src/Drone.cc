@@ -1,14 +1,15 @@
 #define _USE_MATH_DEFINES
 #include "Drone.h"
-#include "BeelineStrategy.h"
-#include "DfsStrategy.h"
-#include "AstarStrategy.h"
-#include "DijkstraStrategy.h"
-#include "SpinDecorator.h"
-#include "JumpDecorator.h"
 
 #include <cmath>
 #include <limits>
+
+#include "AstarStrategy.h"
+#include "BeelineStrategy.h"
+#include "DfsStrategy.h"
+#include "DijkstraStrategy.h"
+#include "JumpDecorator.h"
+#include "SpinDecorator.h"
 
 Drone::Drone(JsonObject& obj) : details(obj) {
   JsonArray pos(obj["position"]);
@@ -20,7 +21,6 @@ Drone::Drone(JsonObject& obj) : details(obj) {
   speed = obj["speed"];
 
   available = true;
-  
 }
 
 Drone::~Drone() {
@@ -39,11 +39,12 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
     }
   }
 
-  if(nearestEntity){
+  if (nearestEntity) {
     Singleton* s = Singleton::GetInstance();
     s->AddPassenger();
 
-    nearestEntity->SetAvailability(false);  // set availability to the nearest entity
+    nearestEntity->SetAvailability(
+        false);  // set availability to the nearest entity
     available = false;
     pickedUp = false;
 
@@ -51,63 +52,68 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
 
     toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
     std::string targetStrategyName = nearestEntity->GetStrategyName();
-    if(targetStrategyName.compare("astar") == 0){
-        toTargetDestStrategy = new AstarStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
-        toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
-    } else if (targetStrategyName.compare("dfs") == 0){
-        toTargetDestStrategy = new DfsStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
-        toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
-    } else if (targetStrategyName.compare("dijkstra") == 0){
-        toTargetDestStrategy = new DijkstraStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
-        toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
-        toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
-    } 
-    // to check if the chrone still has the battery to go to the charge station after finish the task
-    toStationStrategy = new BeelineStrategy(nearestEntity->GetDestination(), {520, 330, 288});
+    if (targetStrategyName.compare("astar") == 0) {
+      toTargetDestStrategy = new AstarStrategy(
+          nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
+      toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
+    } else if (targetStrategyName.compare("dfs") == 0) {
+      toTargetDestStrategy = new DfsStrategy(
+          nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
+      toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
+    } else if (targetStrategyName.compare("dijkstra") == 0) {
+      toTargetDestStrategy = new DijkstraStrategy(
+          nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
+      toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
+      toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
+    }
+    // to check if the chrone still has the battery to go to the charge station
+    // after finish the task
+    toStationStrategy =
+        new BeelineStrategy(nearestEntity->GetDestination(), {520, 330, 288});
   }
 }
 
 // bool Drone::canArrive() {
-//   float totalDis = toTargetPosStrategy->distance + toTargetDestStrategy->distance;
-//   return (bat->GetBattery() * 70) >= totalDis;
+//   float totalDis = toTargetPosStrategy->distance +
+//   toTargetDestStrategy->distance; return (bat->GetBattery() * 70) >=
+//   totalDis;
 // }
 
 void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
-
-  if(toTargetPosStrategy){
+  if (toTargetPosStrategy) {
     toTargetPosStrategy->Move(this, dt);
-    if(toTargetPosStrategy->IsCompleted()){
+    if (toTargetPosStrategy->IsCompleted()) {
       delete toTargetPosStrategy;
       toTargetPosStrategy = NULL;
-
     }
   } else if (toTargetDestStrategy) {
     toTargetDestStrategy->Move(this, dt);
     // Moving the robot
     nearestEntity->SetPosition(this->GetPosition());
     nearestEntity->SetDirection(this->GetDirection());
-    if(toTargetDestStrategy->IsCompleted()){
-        // write CSV file and update singleton when current trip completed
-        Singleton* s = Singleton::GetInstance();
-        s->write2CSV();
-        s->ClearDistance();
-        s->ClearTime();
+    if (toTargetDestStrategy->IsCompleted()) {
+      // write CSV file and update singleton when current trip completed
+      Singleton* s = Singleton::GetInstance();
+      s->write2CSV();
+      s->ClearDistance();
+      s->ClearTime();
 
-        delete toTargetDestStrategy;
-        toTargetDestStrategy = NULL;
-        available = true;
-        nearestEntity = NULL;
+      delete toTargetDestStrategy;
+      toTargetDestStrategy = NULL;
+      available = true;
+      nearestEntity = NULL;
     }
-  }  
+  }
 }
 
 bool Drone::FlyToCharge(double dt, std::vector<IEntity*> scheduler) {
   // should NOT create new everytime
   if (toChargeStrategy == NULL) {
-    toChargeStrategy = new BeelineStrategy(this->GetPosition(), {520, 330, 288});
+    toChargeStrategy =
+        new BeelineStrategy(this->GetPosition(), {520, 330, 288});
   }
   toChargeStrategy->Move(this, dt);
-  if(toChargeStrategy->IsCompleted()){
+  if (toChargeStrategy->IsCompleted()) {
     delete toChargeStrategy;
     toChargeStrategy = NULL;
     // available = true;
@@ -123,16 +129,16 @@ void Drone::Rotate(double angle) {
 }
 
 void Drone::Jump(double height) {
-  if(goUp){
+  if (goUp) {
     position.y += height;
     jumpHeight += height;
-    if(jumpHeight > 5){
+    if (jumpHeight > 5) {
       goUp = false;
     }
   } else {
     position.y -= height;
     jumpHeight -= height;
-    if(jumpHeight < 0){
+    if (jumpHeight < 0) {
       goUp = true;
     }
   }

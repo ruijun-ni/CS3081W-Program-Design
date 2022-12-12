@@ -1,11 +1,11 @@
 #ifndef SIMULATION_MODEL_H_
 #define SIMULATION_MODEL_H_
 
-#include "IController.h"
 #include "CompositeFactory.h"
+#include "IController.h"
 #include "IEntity.h"
-#include "graph.h"
 #include "Singleton.h"
+#include "graph.h"
 using namespace routing;
 
 //--------------------  Model ----------------------------

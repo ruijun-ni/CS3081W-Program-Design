@@ -1,8 +1,9 @@
 #include "SimulationModel.h"
+
+#include "BatteryDecorator.h"
 #include "DroneFactory.h"
 #include "RobotFactory.h"
 #include "StationFactory.h"
-#include "BatteryDecorator.h"
 
 SimulationModel::SimulationModel(IController& controller)
     : controller(controller) {
@@ -20,7 +21,7 @@ void SimulationModel::CreateEntity(JsonObject& entity) {
 
   IEntity* myNewEntity = compFactory->CreateEntity(entity);
   myNewEntity->SetGraph(graph);
-  
+
   // Call AddEntity to add it to the view
   controller.AddEntity(*myNewEntity);
   entities.push_back(myNewEntity);
@@ -37,7 +38,8 @@ void SimulationModel::ScheduleTrip(JsonObject& details) {
     JsonObject detailsTemp = entity->GetDetails();
     std::string nameTemp = detailsTemp["name"];
     std::string typeTemp = detailsTemp["type"];
-    if (name.compare(nameTemp) == 0 && typeTemp.compare("robot") == 0 && entity->GetAvailability()) {
+    if (name.compare(nameTemp) == 0 && typeTemp.compare("robot") == 0 &&
+        entity->GetAvailability()) {
       std::string strategyName = details["search"];
       entity->SetStrategyName(strategyName);
       entity->SetDestination(Vector3(end[0], end[1], end[2]));
@@ -65,7 +67,7 @@ float SimulationModel::ShowBattery() {
     JsonObject detailsTemp = entity->GetDetails();
     std::string nameTemp = detailsTemp["name"];
     if (nameTemp.compare("Drone") == 0) {
-      BatteryDecorator* b = (BatteryDecorator*) entity;
+      BatteryDecorator* b = (BatteryDecorator*)entity;
       return b->GetBattery();
     }
   }
@@ -80,6 +82,6 @@ std::vector<double> SimulationModel::ShowOthers() {
   res.push_back(s->GetTripDistance());
   res.push_back(s->GetTotalTime());
   res.push_back(s->GetTripTime());
-  
+
   return res;
 }

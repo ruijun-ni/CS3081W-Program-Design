@@ -1,23 +1,24 @@
 #include "CompositeFactory.h"
+
 #include "IEntity.h"
 
-IEntity* CompositeFactory::CreateEntity(JsonObject& entity){
-  for(int i = 0; i<componentFactories.size(); i++){
+IEntity* CompositeFactory::CreateEntity(JsonObject& entity) {
+  for (int i = 0; i < componentFactories.size(); i++) {
     IEntity* createdEntity = componentFactories.at(i)->CreateEntity(entity);
-    if(createdEntity != nullptr){
+    if (createdEntity != nullptr) {
       return createdEntity;
     }
   }
-  std::cout<<"[!] Error: Type mismatched..."<<std::endl;
+  std::cout << "[!] Error: Type mismatched..." << std::endl;
   return nullptr;
 }
 
-void CompositeFactory::AddFactory(IEntityFactory* factoryEntity){
+void CompositeFactory::AddFactory(IEntityFactory* factoryEntity) {
   componentFactories.push_back(factoryEntity);
 }
 
 CompositeFactory::~CompositeFactory() {
-  for (int i = 0; i < componentFactories.size(); i++){
+  for (int i = 0; i < componentFactories.size(); i++) {
     delete componentFactories[i];
   }
 }

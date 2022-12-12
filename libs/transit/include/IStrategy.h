@@ -2,20 +2,22 @@
 #define ISTRATEGY_H_
 
 #include <vector>
-#include "graph.h"
+
 #include "IEntity.h"
+#include "graph.h"
 
 using namespace routing;
 
 class IStrategy {
-    public:
-        virtual void Move(IEntity* entity, double dt) = 0;
-        virtual bool IsCompleted() = 0;
-        virtual IStrategy* getStrategy() { return this; };
-        float distance = 0;
-    protected:
-        // IGraph object to be used in the simulation.
-        const IGraph* graph;
-}; //close class 
+ public:
+  virtual void Move(IEntity* entity, double dt) = 0;
+  virtual bool IsCompleted() = 0;
+  virtual IStrategy* getStrategy() { return this; };
+  float distance = 0;
 
-#endif // ISTRATEGY_H_
+ protected:
+  // IGraph object to be used in the simulation.
+  const IGraph* graph;
+};  // close class
+
+#endif  // ISTRATEGY_H_

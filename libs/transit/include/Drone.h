@@ -5,7 +5,6 @@
 
 #include "IEntity.h"
 #include "IStrategy.h"
-#include "Singleton.h"
 #include "math/vector3.h"
 
 // Represents a drone in a physical system.
@@ -55,13 +54,13 @@ class Drone : public IEntity {
 
   float getConsumption() { return consumption; }
 
-  IStrategy* getTargetPosStrategy() {return toTargetPosStrategy;}
+  IStrategy* getTargetPosStrategy() { return toTargetPosStrategy; }
 
-  IStrategy* getTargetDestStrategy() {return toTargetDestStrategy;}
+  IStrategy* getTargetDestStrategy() { return toTargetDestStrategy; }
 
-  IStrategy* getStationStrategy() {return toStationStrategy;}
+  IStrategy* getStationStrategy() { return toStationStrategy; }
 
-  IStrategy* getChargeStrategy() {return toChargeStrategy;}
+  IStrategy* getChargeStrategy() { return toChargeStrategy; }
 
   // Removing the copy constructor and assignment operator
   // so that drones cannot be coppied.
@@ -73,7 +72,7 @@ class Drone : public IEntity {
   Vector3 position;
   Vector3 direction;
   float jumpHeight = 0;
-  bool goUp = true; // jump helper
+  bool goUp = true;  // jump helper
   Vector3 destination;
   float speed;
   bool available;
