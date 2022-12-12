@@ -10,9 +10,9 @@ class Singleton {
  private:
   unordered_map<string, double> data;
   static Singleton* instance;
+  Singleton();
 
  public:
-  Singleton();
   ~Singleton();
   void AddPassenger();
   void AddTripDistance(double d);
