@@ -62,6 +62,8 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
         toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
         toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
     } 
+    // to check if the chrone still has the battery to go to the charge station after finish the task
+    toStationStrategy = new BeelineStrategy(nearestEntity->GetDestination(), {520, 330, 288});
   }
 }
 
@@ -71,9 +73,6 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
 // }
 
 void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
-  if (available) {
-    GetNearestEntity(scheduler);
-  }
 
   if(toTargetPosStrategy){
     toTargetPosStrategy->Move(this, dt);
@@ -84,7 +83,6 @@ void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
     }
   } else if (toTargetDestStrategy) {
     toTargetDestStrategy->Move(this, dt);
-    
     // Moving the robot
     nearestEntity->SetPosition(this->GetPosition());
     nearestEntity->SetDirection(this->GetDirection());
@@ -101,6 +99,21 @@ void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
         nearestEntity = NULL;
     }
   }  
+}
+
+bool Drone::FlyToCharge(double dt, std::vector<IEntity*> scheduler) {
+  // should NOT create new everytime
+  if (toChargeStrategy == NULL) {
+    toChargeStrategy = new BeelineStrategy(this->GetPosition(), {520, 330, 288});
+  }
+  toChargeStrategy->Move(this, dt);
+  if(toChargeStrategy->IsCompleted()){
+    delete toChargeStrategy;
+    toChargeStrategy = NULL;
+    // available = true;
+    return true;
+  }
+  return false;
 }
 
 void Drone::Rotate(double angle) {

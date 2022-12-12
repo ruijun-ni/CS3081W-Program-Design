@@ -34,6 +34,9 @@ class SimulationModel {
   // Adds a new entity type
   void AddFactory(IEntityFactory* factory);
 
+  // Shows the battery level of Drone
+  float ShowBattery();
+
   // download csv
   void DownloadCSV() {
     Singleton* s = Singleton::GetInstance();

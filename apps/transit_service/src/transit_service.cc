@@ -52,6 +52,7 @@ public:
                 // Send updated entities
                 SendEntity("UpdateEntity", *it->second, false);
             }
+            ShowBattery();
         } else if (cmd == "DownloadCSV") {
             cout << "Go to the backend to download csv" << endl;
             model.DownloadCSV();
@@ -106,6 +107,12 @@ public:
         JsonObject details;
         details["id"] = id;
         SendEventToView("RemovePath", details);
+    }
+
+    void ShowBattery() {
+        JsonObject details;
+        details["battery"] = model.ShowBattery();
+        SendEventToView("UpdateBattery", details);
     }
 
     /// Allows messages to be passed back to the view

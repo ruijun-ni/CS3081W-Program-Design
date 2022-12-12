@@ -13,7 +13,7 @@ class CelebrationDecorator : public IStrategy {
   }
   void Move(IEntity *entity, double dt);
   bool IsCompleted();
-
+  IStrategy* getStrategy() {return strategy;}
  protected:
   IStrategy *strategy;
   float time;

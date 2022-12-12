@@ -14,6 +14,7 @@
 class Drone : public IEntity {
  public:
   // Drones are created with a name
+
   Drone(JsonObject& obj);
   // Destructor
   ~Drone();
@@ -35,6 +36,8 @@ class Drone : public IEntity {
 
   bool canArrive();
 
+  bool FlyToCharge(double dt, std::vector<IEntity*> scheduler);
+
   // Updates the drone's position
   void Update(double dt, std::vector<IEntity*> scheduler);
 
@@ -49,6 +52,16 @@ class Drone : public IEntity {
   void Rotate(double angle);
 
   void Jump(double height);
+
+  float getConsumption() { return consumption; }
+
+  IStrategy* getTargetPosStrategy() {return toTargetPosStrategy;}
+
+  IStrategy* getTargetDestStrategy() {return toTargetDestStrategy;}
+
+  IStrategy* getStationStrategy() {return toStationStrategy;}
+
+  IStrategy* getChargeStrategy() {return toChargeStrategy;}
 
   // Removing the copy constructor and assignment operator
   // so that drones cannot be coppied.
@@ -69,6 +82,9 @@ class Drone : public IEntity {
   IEntity* nearestEntity = NULL;
   IStrategy* toTargetPosStrategy = NULL;
   IStrategy* toTargetDestStrategy = NULL;
+  IStrategy* toStationStrategy = NULL;
+  IStrategy* toChargeStrategy = NULL;
+  float consumption;
 };
 
 #endif

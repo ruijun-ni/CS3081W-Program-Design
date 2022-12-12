@@ -63,7 +63,6 @@ void DijkstraStrategy::Move(IEntity* entity, double dt){
     currentPos = currentPos + direction * speed * dt;
     entity->SetPosition(currentPos);
     entity->SetDirection(direction);
-    
     if((destination - currentPos).Magnitude()<1.0){
         currentIndex++;
     }
