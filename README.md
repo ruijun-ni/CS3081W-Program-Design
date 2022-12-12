@@ -5,7 +5,7 @@ _(Due: Thursday, Dec. 16, 2022 @ 11:59pm)_
 
 ### Team infomation
 
-Team 001-9. Haibo Wang wan00220, Linghe Wang wang9257, Yanzheng Wu wu001026, Ruijun ni nee00011
+Team 001-9. Haibo Wang wan00220, Linghe Wang wang9257, Yanzheng Wu wu001026, Ruijun Ni nee00011
 
 ### Project Overview
 
