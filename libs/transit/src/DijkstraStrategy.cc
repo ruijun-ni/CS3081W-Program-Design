@@ -2,6 +2,8 @@
 #include "routing/dijkstra.h"
 #include "routing_api.h"
 #include "graph.h"
+#include "Singleton.h"
+
 using namespace routing;
 
 DijkstraStrategy::DijkstraStrategy(Vector3 position, Vector3 destination, const IGraph* graph) {
@@ -45,10 +47,19 @@ bool DijkstraStrategy::IsCompleted(){
 }
 
 void DijkstraStrategy::Move(IEntity* entity, double dt){
+    // collect time per drone
+    Singleton* s = Singleton::GetInstance();
+    s->AddTime(dt);
+
     Vector3 currentPos = entity->GetPosition();
     Vector3 destination = Vector3(path[currentIndex].at(0), path[currentIndex].at(1), path[currentIndex].at(2));
     Vector3 direction = (destination - currentPos).Unit();
-    float speed = entity->GetSpeed(); 
+    float speed = entity->GetSpeed();
+    
+    // collect distance per drone
+    s->AddTripDistance(speed * dt); 
+    s->AddTotalDistance(speed * dt); 
+
     currentPos = currentPos + direction * speed * dt;
     entity->SetPosition(currentPos);
     entity->SetDirection(direction);

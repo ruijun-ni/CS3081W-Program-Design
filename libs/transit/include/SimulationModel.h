@@ -5,6 +5,7 @@
 #include "CompositeFactory.h"
 #include "IEntity.h"
 #include "graph.h"
+#include "Singleton.h"
 using namespace routing;
 
 //--------------------  Model ----------------------------
@@ -14,6 +15,10 @@ using namespace routing;
 class SimulationModel {
  public:
   SimulationModel(IController& controller);
+  // ~SimulationModel() {
+  //   Singleton* s = Singleton::GetInstance();
+  //   s->write2CSV();
+  // };
 
   void SetGraph(const IGraph* graph) { this->graph = graph; }
 
@@ -31,6 +36,12 @@ class SimulationModel {
 
   // Shows the battery level of Drone
   float ShowBattery();
+
+  // download csv
+  void DownloadCSV() {
+    Singleton* s = Singleton::GetInstance();
+    s->write2CSV();
+  }
 
  protected:
   IController& controller;

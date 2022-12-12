@@ -20,6 +20,7 @@ Drone::Drone(JsonObject& obj) : details(obj) {
   speed = obj["speed"];
 
   available = true;
+  
 }
 
 Drone::~Drone() {
@@ -39,6 +40,9 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
   }
 
   if(nearestEntity){
+    Singleton* s = Singleton::GetInstance();
+    s->AddPassenger();
+
     nearestEntity->SetAvailability(false);  // set availability to the nearest entity
     available = false;
     pickedUp = false;
@@ -75,6 +79,7 @@ void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
     if(toTargetPosStrategy->IsCompleted()){
       delete toTargetPosStrategy;
       toTargetPosStrategy = NULL;
+
     }
   } else if (toTargetDestStrategy) {
     toTargetDestStrategy->Move(this, dt);
@@ -82,10 +87,16 @@ void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
     nearestEntity->SetPosition(this->GetPosition());
     nearestEntity->SetDirection(this->GetDirection());
     if(toTargetDestStrategy->IsCompleted()){
-      delete toTargetDestStrategy;
-      toTargetDestStrategy = NULL;
-      available = true;
-      nearestEntity = NULL;
+        // write CSV file and update singleton when current trip completed
+        Singleton* s = Singleton::GetInstance();
+        s->write2CSV();
+        s->ClearDistance();
+        s->ClearTime();
+
+        delete toTargetDestStrategy;
+        toTargetDestStrategy = NULL;
+        available = true;
+        nearestEntity = NULL;
     }
   }  
 }

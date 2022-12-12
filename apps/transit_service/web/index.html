@@ -75,6 +75,7 @@
 		<div><br><input type="checkbox" onclick='toggleRoutes()'> Show All Routes
 		</div>
 		<br><div>Battery: <p id="battery"></p></div>
+		<br><div><input type="button" value="Download CSV" onclick="downloadCSV()"></div>
 	</div>
 	<div id="scene-container"></div>
 	<!-- Include the "main" graphics script and run it. -->
@@ -82,3 +83,10 @@
 </body>
 
 </html>
+
+<script>
+	function downloadCSV() {
+		api.sendCommand("DownloadCSV", {});
+		alert("Downloaded to CSV file!");
+	}
+</script>
