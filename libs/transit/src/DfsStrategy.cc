@@ -22,6 +22,22 @@ DfsStrategy::DfsStrategy(Vector3 position, Vector3 destination, const IGraph* gr
     std::vector<float> end = graph->NearestNode(destinationV, EuclideanDistance())->GetPosition();
     
     path = graph->GetPath(start, end, DepthFirstSearch::Default());
+
+    distance = 0;
+    for (int i = 1; i < path.size(); i++) {
+        float prev_x = path[i - 1][0];
+        float prev_z = path[i - 1][1];
+        float prev_y = path[i - 1][2];
+        
+        float curr_x = path[i][0];
+        float curr_z = path[i][1];
+        float curr_y = path[i][2];
+
+        this->distance += sqrt(pow(prev_x - curr_x, 2) + pow(prev_y - curr_y, 2) +
+                pow(prev_z - curr_z, 2));
+    }
+    std::cout << "The total distance for Dfs route is " << distance << std::endl;
+
     currentIndex = 0;
     maxIndex = path.size()-1;
 }

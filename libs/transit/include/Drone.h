@@ -33,6 +33,8 @@ class Drone : public IEntity {
 
   void GetNearestEntity(std::vector<IEntity*> scheduler);
 
+  bool canArrive();
+
   // Updates the drone's position
   void Update(double dt, std::vector<IEntity*> scheduler);
 
