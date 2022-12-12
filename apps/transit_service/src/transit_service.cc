@@ -52,6 +52,9 @@ public:
                 // Send updated entities
                 SendEntity("UpdateEntity", *it->second, false);
             }
+        } else if (cmd == "DownloadCSV") {
+            cout << "Go to the backend to download csv" << endl;
+            model.DownloadCSV();
         }
     }
 

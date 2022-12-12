@@ -5,6 +5,7 @@
 
 #include "IEntity.h"
 #include "IStrategy.h"
+#include "Singleton.h"
 #include "math/vector3.h"
 
 // Represents a drone in a physical system.
