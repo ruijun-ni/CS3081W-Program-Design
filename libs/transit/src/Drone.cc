@@ -91,7 +91,10 @@ void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
 }
 
 bool Drone::FlyToCharge(double dt, std::vector<IEntity*> scheduler) {
-  toChargeStrategy = new BeelineStrategy(this->GetPosition(), {520, 330, 288});
+  // should NOT create new everytime
+  if (toChargeStrategy == NULL) {
+    toChargeStrategy = new BeelineStrategy(this->GetPosition(), {520, 330, 288});
+  }
   toChargeStrategy->Move(this, dt);
   if(toChargeStrategy->IsCompleted()){
     delete toChargeStrategy;

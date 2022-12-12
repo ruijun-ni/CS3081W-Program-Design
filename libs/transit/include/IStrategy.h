@@ -11,6 +11,7 @@ class IStrategy {
     public:
         virtual void Move(IEntity* entity, double dt) = 0;
         virtual bool IsCompleted() = 0;
+        virtual IStrategy* getStrategy() { return this; };
         float distance = 0;
     protected:
         // IGraph object to be used in the simulation.

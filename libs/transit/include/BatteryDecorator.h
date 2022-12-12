@@ -32,16 +32,19 @@ class BatteryDecorator : public IEntity {
 
   bool GetAvailability() const { return drone->GetAvailability(); }
 
+  void Charge(double dt);
+
   void SetGraph(const IGraph* graph) { 
     std::cout<<"*****here*****"<<std::endl;
     drone->SetGraph(graph); }
-  
-  bool isCharge = false;
+
+  float curDistance = 0;
 
  private:
   Drone* drone;
   float battery;
   bool check;
+  bool isCharge = false;
 };
 
 #endif  // BATTERY_DECORATOR_H_
