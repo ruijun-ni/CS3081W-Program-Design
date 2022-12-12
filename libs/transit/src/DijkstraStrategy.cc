@@ -49,7 +49,8 @@ bool DijkstraStrategy::IsCompleted(){
 void DijkstraStrategy::Move(IEntity* entity, double dt){
     // collect time per drone
     Singleton* s = Singleton::GetInstance();
-    s->AddTime(dt);
+    s->AddTotalTime(dt);
+    s->AddTripTime(dt);
 
     Vector3 currentPos = entity->GetPosition();
     Vector3 destination = Vector3(path[currentIndex].at(0), path[currentIndex].at(1), path[currentIndex].at(2));

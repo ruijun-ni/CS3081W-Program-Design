@@ -70,3 +70,16 @@ float SimulationModel::ShowBattery() {
     }
   }
 }
+
+std::vector<double> SimulationModel::ShowOthers() {
+  std::vector<double> res;
+
+  Singleton* s = Singleton::GetInstance();
+
+  res.push_back(s->GetTotalDistance());
+  res.push_back(s->GetTripDistance());
+  res.push_back(s->GetTotalTime());
+  res.push_back(s->GetTripTime());
+  
+  return res;
+}

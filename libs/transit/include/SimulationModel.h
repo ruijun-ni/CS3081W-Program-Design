@@ -37,6 +37,9 @@ class SimulationModel {
   // Shows the battery level of Drone
   float ShowBattery();
 
+  // Shows times and distances
+  std::vector<double> ShowOthers();
+
   // download csv
   void DownloadCSV() {
     Singleton* s = Singleton::GetInstance();

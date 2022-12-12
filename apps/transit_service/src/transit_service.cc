@@ -53,6 +53,7 @@ public:
                 SendEntity("UpdateEntity", *it->second, false);
             }
             ShowBattery();
+            ShowOthers();
         } else if (cmd == "DownloadCSV") {
             cout << "Go to the backend to download csv" << endl;
             model.DownloadCSV();
@@ -113,6 +114,16 @@ public:
         JsonObject details;
         details["battery"] = model.ShowBattery();
         SendEventToView("UpdateBattery", details);
+    }
+
+    void ShowOthers() {
+        JsonObject details;
+        std::vector<double> info = model.ShowOthers();
+        details["total_dis"] = info[0];
+        details["trip_dis"] = info[1];
+        details["total_time"] = info[2];
+        details["trip_time"] = info[3];
+        SendEventToView("UpdateOthers", details);
     }
 
     /// Allows messages to be passed back to the view

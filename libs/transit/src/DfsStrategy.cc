@@ -49,7 +49,8 @@ bool DfsStrategy::IsCompleted(){
 void DfsStrategy::Move(IEntity* entity, double dt){
     // collect time per drone
     Singleton* s = Singleton::GetInstance();
-    s->AddTime(dt);
+    s->AddTotalTime(dt);
+    s->AddTripTime(dt);
 
     Vector3 currentPos = entity->GetPosition();
     Vector3 destination = Vector3(path[currentIndex].at(0), path[currentIndex].at(1), path[currentIndex].at(2));
@@ -64,13 +65,6 @@ void DfsStrategy::Move(IEntity* entity, double dt){
     entity->SetPosition(currentPos);
     entity->SetDirection(direction);
     
-    // if (currPath == 0) {
-    //     currPath = destination.Distance(currentPos);
-    // }
-    // else {
-    //     currPath = currPath - destination.Distance(currentPos);
-    // }
-
     if((destination - currentPos).Magnitude()<1.0){
         currentIndex++;
     }

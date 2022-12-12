@@ -20,22 +20,12 @@ void BeelineStrategy::Move(IEntity* entity, double dt){
     Vector3 dir = (destination - position).Unit();
     float speed = entity->GetSpeed(); 
 
-    // collect total distance per drone
+    // collect total distance per drone and total time
     Singleton* s = Singleton::GetInstance();
     s->AddTotalDistance(speed * dt); 
+    s->AddTotalTime(dt);  
 
     position = position + dir * speed * dt;
     entity->SetPosition(position);
     entity->SetDirection(dir);
-
-    // currPath = destination.Distance(position);
-    // if (currPath == 0) {
-    //     currPath = destination.Distance(position);
-    // }
-    // else {
-    //     currPath = currPath - destination.Distance(position);
-    // }
-    // std::cout << "currentPos" << position.x << "   " << position.z << std::endl;
-    // std::cout << "destination" << destination.x << "   " << destination.z << std::endl;
-    // std::cout << currPath << std::endl;
 }

@@ -17,11 +17,16 @@ class Singleton {
   void AddPassenger();
   void AddTripDistance(double d);
   void AddTotalDistance(double d);
-  void AddTime(double t);
+  void AddTotalTime(double t);
+  void AddTripTime(double t);
   void write2CSV();
   static Singleton* GetInstance();
   void ClearDistance();
   void ClearTime();
+  double GetTotalDistance();
+  double GetTripDistance();
+  double GetTotalTime();
+  double GetTripTime();
 };
 
 #endif  // SINGLETON_H_

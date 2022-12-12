@@ -90,7 +90,20 @@ $( document ).ready(function() {
         }
         if (data.event == "UpdateBattery") {
           var battery = document.getElementById("battery");
-          battery.innerHTML = data.details.battery.toFixed(2);          
+          battery.innerHTML = data.details.battery.toFixed(0);          
+        }
+        if (data.event == "UpdateOthers") {
+          var total_dis = document.getElementById("total_dis");
+          total_dis.innerHTML = data.details.total_dis.toFixed(0);
+
+          var trip_dis = document.getElementById("trip_dis");
+          trip_dis.innerHTML = data.details.trip_dis.toFixed(0);        
+          
+          var total_time = document.getElementById("total_time");
+          total_time.innerHTML = data.details.total_time.toFixed(0);
+
+          var trip_time = document.getElementById("trip_time");
+          trip_time.innerHTML = data.details.trip_time.toFixed(0);
         }
       }
     }
