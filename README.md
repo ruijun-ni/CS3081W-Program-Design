@@ -77,6 +77,8 @@ We also have a Update() function in batteryDecrator.cc. This function is respons
 
 
 ### Data Collection
+For the Singleton pattern, we ensure that a class has only one instance while providing a global access point to this instance. To be specific, we have the same instance of Singleton to collect the number of delivered passengers, traveling distance, trip distance, total time, and traveling time per scheduled trip. Finally, we can have the .csv file containing the whole data.
+
 
 
 
