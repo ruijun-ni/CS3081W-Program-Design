@@ -77,9 +77,9 @@ We also have a Update() function in batteryDecrator.cc. This function is respons
 
 
 ### Data Collection
+The other new feature we create is data collection feature. We  collect data of the drone in the backend using Singleton pattern, display the data in the frontend,and write it to a csv file.
 For the Singleton pattern, we ensure that a class has only one instance while providing a global access point to this instance. To be specific, we have the same instance of Singleton to collect the number of delivered passengers, traveling distance, trip distance, total time, and traveling time per scheduled trip. Finally, we can have the .csv file containing the whole data.
-
-
+As for the frontend, we get the data from backend in the simulation model through web sockets in the transit service, and then display the data of the battery level, time, and distance in the main page.
 
 
 ## Sprint Retrospective
