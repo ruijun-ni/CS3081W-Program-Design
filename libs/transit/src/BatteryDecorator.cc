@@ -51,19 +51,21 @@ void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler) {
     if (drone->getTargetPosStrategy() != NULL) {
       if (check) {
         drone->Update(dt, scheduler);
-        curDistance += dt * 30.0;
-        SetBattery(battery - dt * 30.0 * 0.008);
+        SetBattery(battery - dt * drone->GetSpeed() * 0.008);
       } else {
         bool done = drone->FlyToCharge(dt, scheduler);
-        SetBattery(battery - dt * 30.0 * 0.008);
+        SetBattery(battery - dt * drone->GetSpeed() * 0.008);
         if (done) {
           isCharge = true;
         }
       }
     } else if (drone->getTargetDestStrategy() != NULL) {
       drone->Update(dt, scheduler);
-      curDistance += dt * 30.0;
-      SetBattery(battery - dt * 30.0 * 0.008);
+      SetBattery(battery - dt * drone->GetSpeed() * 0.008);
     }
   }
+}
+
+void BatteryDecorator::SetGraph(const IGraph* graph){ 
+  drone->SetGraph(graph); 
 }
