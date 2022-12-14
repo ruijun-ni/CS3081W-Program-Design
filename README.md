@@ -36,6 +36,8 @@ You have two ways to get the materials
     ```
 2. Download the zip in the main branch.
 
+3. TODO: complete instruction for docker
+
 ### Compile and Run
 1. Make sure your linux OS is installed and running. Locate to the root directory, then complie the program using following command.
     ```
@@ -74,7 +76,7 @@ We add a new member variable to the Istrategy called "distance". We use euclidia
 
 We also have a Update() function in batteryDecrator.cc. This function is responsible for updating the battery power. The battery power will increase when the drone recharge, decrease when the drone move. We will use canArrive() to check if the drone can finish the trip. If it is, the drone will directly go to pick up the robot and send it to the destination. Otherwise, it will go to recharge first, then it will continue the trip.
 
-
+No extra or special instructions needed for using this new feature. To run the program, please only follow the insturction in the "How to run the simulation" section.
 
 ### Data Collection
 The other new feature we create is data collection feature. We  collect data of the drone in the backend using Singleton pattern, display the data in the frontend,and write it to a csv file.
