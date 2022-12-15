@@ -1,0 +1,4 @@
+<map id="DijkstraStrategy" name="DijkstraStrategy">
+<area shape="rect" id="node1" title="this class inhertis from the IStrategy class and is responsible for generating the dijkstra that the ..." alt="" coords="5,80,133,107"/>
+<area shape="rect" id="node2" href="$classIStrategy.html" title="The abstract class that is resonpsible for entity moving." alt="" coords="29,5,110,32"/>
+</map>

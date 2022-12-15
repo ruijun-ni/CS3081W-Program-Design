@@ -1,0 +1,76 @@
+\hypertarget{classIStrategy}{}\doxysection{I\+Strategy Class Reference}
+\label{classIStrategy}\index{IStrategy@{IStrategy}}
+
+
+The abstract class that is resonpsible for entity moving.  
+
+
+
+
+{\ttfamily \#include $<$I\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for I\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIStrategy__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIStrategy_a69254389f4ef9a851dc5d40c4cc9aacd}{Move}} (\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$entity, double dt)=0
+\begin{DoxyCompactList}\small\item\em Virtual function. Move the entity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIStrategy_a13c6048efd232b696db5f35000d5b106}\label{classIStrategy_a13c6048efd232b696db5f35000d5b106}} 
+virtual bool \mbox{\hyperlink{classIStrategy_a13c6048efd232b696db5f35000d5b106}{Is\+Completed}} ()=0
+\begin{DoxyCompactList}\small\item\em Virtual function. It check if currently strategy is complete. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIStrategy_a985919d4ee716268978eb02c6c94db83}\label{classIStrategy_a985919d4ee716268978eb02c6c94db83}} 
+virtual \mbox{\hyperlink{classIStrategy}{I\+Strategy}} $\ast$ \mbox{\hyperlink{classIStrategy_a985919d4ee716268978eb02c6c94db83}{get\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function. It returns this strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIStrategy_abf58414f674c79e43e5cf7cd2a73b09b}\label{classIStrategy_abf58414f674c79e43e5cf7cd2a73b09b}} 
+float {\bfseries distance} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIStrategy_abdcb4741836a0bb72017f52752962ba2}\label{classIStrategy_abdcb4741836a0bb72017f52752962ba2}} 
+const I\+Graph $\ast$ {\bfseries graph}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The abstract class that is resonpsible for entity moving. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIStrategy_a69254389f4ef9a851dc5d40c4cc9aacd}\label{classIStrategy_a69254389f4ef9a851dc5d40c4cc9aacd}} 
+\index{IStrategy@{IStrategy}!Move@{Move}}
+\index{Move@{Move}!IStrategy@{IStrategy}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily virtual void I\+Strategy\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$}]{entity,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Virtual function. Move the entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity that need to move \\
+\hline
+{\em dt} & The delta time \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classDfsStrategy_aab5a0a5c97f710075634b81a3e00ecf9}{Dfs\+Strategy}}, \mbox{\hyperlink{classDijkstraStrategy_a24e0177f55b69a6b2260b0a0e2ce4430}{Dijkstra\+Strategy}}, \mbox{\hyperlink{classAstarStrategy_afd13e7ed2b1872f01aa2a2f4b07b41c3}{Astar\+Strategy}}, \mbox{\hyperlink{classBeelineStrategy_ab8d3f5b05d5e9dd06465f5fc4cd4767e}{Beeline\+Strategy}}, \mbox{\hyperlink{classJumpDecorator_a6d46675428916bbe6acd10fb25d51f86}{Jump\+Decorator}}, \mbox{\hyperlink{classSpinDecorator_a766735ae467d0bb3a80169e109951804}{Spin\+Decorator}}, and \mbox{\hyperlink{classCelebrationDecorator_aaea8fd11f7d0e12dd79ccdc63ab1bbf6}{Celebration\+Decorator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/wu001026/csci-\/3081w-\/f22/\+Team-\/001-\/9-\/homework04/libs/transit/include/I\+Strategy.\+h\end{DoxyCompactItemize}

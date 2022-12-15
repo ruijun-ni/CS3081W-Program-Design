@@ -15,7 +15,6 @@
  */
 class Drone : public IEntity {
  public:
-
   /**
    * @brief constructor
    * @param obj Drones are created with a model and its parameters
@@ -74,7 +73,8 @@ class Drone : public IEntity {
    * @brief The drone will fly to the energy station
    * @param dt The delta time
    * @param scheduler The scheduler of drone
-   * @return If the drone finish the fly strategy, return true. Otherwise, false.
+   * @return If the drone finish the fly strategy, return true. Otherwise,
+   * false.
    */
   bool FlyToCharge(double dt, std::vector<IEntity*> scheduler);
 
@@ -104,9 +104,9 @@ class Drone : public IEntity {
   void SetDestination(Vector3 des_) { destination = des_; }
 
   /**
-  * @brief Rotates a drone.
-  * @param angle The rotate angle of drone
-  */
+   * @brief Rotates a drone.
+   * @param angle The rotate angle of drone
+   */
   void Rotate(double angle);
 
   /**
@@ -119,30 +119,30 @@ class Drone : public IEntity {
    * @brief Get toTargetPosStrategy of the drone
    * @return Return the toTargetPosStrategy
    */
-  IStrategy* getTargetPosStrategy() {return toTargetPosStrategy;}
+  IStrategy* getTargetPosStrategy() { return toTargetPosStrategy; }
 
   /**
    * @brief Get toTargetDestStrategy of the drone
    * @return Return the toTargetDestStrategy
    */
-  IStrategy* getTargetDestStrategy() {return toTargetDestStrategy;}
+  IStrategy* getTargetDestStrategy() { return toTargetDestStrategy; }
 
   /**
    * @brief Get toStationStrategy of the drone
    * @return Return the toStationStrategy
    */
-  IStrategy* getStationStrategy() {return toStationStrategy;}
+  IStrategy* getStationStrategy() { return toStationStrategy; }
 
   /**
    * @brief Get toChargeStrategy of the drone
    * @return Return the toChargeStrategy
    */
-  IStrategy* getChargeStrategy() {return toChargeStrategy;}
+  IStrategy* getChargeStrategy() { return toChargeStrategy; }
 
   /**
    * @brief Remove the copy constructor and assignment operator.
    *
-   * @param drone  
+   * @param drone
    */
   Drone(const Drone& drone) = delete;
 
@@ -155,20 +155,24 @@ class Drone : public IEntity {
 
  private:
   JsonObject details;  //!< drone's details
-  Vector3 position;  //!< drone's position
-  Vector3 direction;  //!< drone's direction
+  Vector3 position;    //!< drone's position
+  Vector3 direction;   //!< drone's direction
   float jumpHeight = 0;
-  bool goUp = true; // jump helper
-  Vector3 destination;  //!< drone's destination
-  float speed;  //!< drone's speed
-  bool available;  //!< drone's availabiliy status
-  bool pickedUp;  //!< if the drone pick up the robot
-  std::string strategyName;  //!< drone's strategy name
-  IEntity* nearestEntity = NULL; //!< the nearest entity of drone
-  IStrategy* toTargetPosStrategy = NULL;  //!< the strategy drone use to pick up the robot
-  IStrategy* toTargetDestStrategy = NULL;  //!< the strategy drone use to send the robot
-  IStrategy* toStationStrategy = NULL;  //!< the strategy drone use to go to the energy station
-  IStrategy* toChargeStrategy = NULL;  //!< the strategy drone use to go to the energy station
+  bool goUp = true;               // jump helper
+  Vector3 destination;            //!< drone's destination
+  float speed;                    //!< drone's speed
+  bool available;                 //!< drone's availabiliy status
+  bool pickedUp;                  //!< if the drone pick up the robot
+  std::string strategyName;       //!< drone's strategy name
+  IEntity* nearestEntity = NULL;  //!< the nearest entity of drone
+  IStrategy* toTargetPosStrategy =
+      NULL;  //!< the strategy drone use to pick up the robot
+  IStrategy* toTargetDestStrategy =
+      NULL;  //!< the strategy drone use to send the robot
+  IStrategy* toStationStrategy =
+      NULL;  //!< the strategy drone use to go to the energy station
+  IStrategy* toChargeStrategy =
+      NULL;  //!< the strategy drone use to go to the energy station
 };
 
 #endif

@@ -66,6 +66,4 @@ void BatteryDecorator::Update(double dt, std::vector<IEntity*> scheduler) {
   }
 }
 
-void BatteryDecorator::SetGraph(const IGraph* graph){ 
-  drone->SetGraph(graph); 
-}
+void BatteryDecorator::SetGraph(const IGraph* graph) { drone->SetGraph(graph); }

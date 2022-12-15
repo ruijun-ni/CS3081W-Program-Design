@@ -1,0 +1,109 @@
+\hypertarget{classJumpDecorator}{}\doxysection{Jump\+Decorator Class Reference}
+\label{classJumpDecorator}\index{JumpDecorator@{JumpDecorator}}
+
+
+The class inherite from \mbox{\hyperlink{classCelebrationDecorator}{Celebration\+Decorator}}. It is responsible for jump celebration behavior.  
+
+
+
+
+{\ttfamily \#include $<$Jump\+Decorator.\+h$>$}
+
+
+
+Inheritance diagram for Jump\+Decorator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{classJumpDecorator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Jump\+Decorator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{classJumpDecorator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJumpDecorator_a0e488a121d506f294d2ed4b90108e10f}{Jump\+Decorator}} (\mbox{\hyperlink{classIStrategy}{I\+Strategy}} $\ast$strategy\+\_\+)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classJumpDecorator}{Jump\+Decorator}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJumpDecorator_a94b32bed5b764df15980356aa8763abe}{Is\+Completed}} ()
+\begin{DoxyCompactList}\small\item\em Check if the strategy is complete. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpDecorator_a6d46675428916bbe6acd10fb25d51f86}{Move}} (\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$entity, double dt)
+\begin{DoxyCompactList}\small\item\em Move the entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The class inherite from \mbox{\hyperlink{classCelebrationDecorator}{Celebration\+Decorator}}. It is responsible for jump celebration behavior. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJumpDecorator_a0e488a121d506f294d2ed4b90108e10f}\label{classJumpDecorator_a0e488a121d506f294d2ed4b90108e10f}} 
+\index{JumpDecorator@{JumpDecorator}!JumpDecorator@{JumpDecorator}}
+\index{JumpDecorator@{JumpDecorator}!JumpDecorator@{JumpDecorator}}
+\doxysubsubsection{\texorpdfstring{JumpDecorator()}{JumpDecorator()}}
+{\footnotesize\ttfamily Jump\+Decorator\+::\+Jump\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIStrategy}{I\+Strategy}} $\ast$}]{strategy\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \mbox{\hyperlink{classJumpDecorator}{Jump\+Decorator}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strategy\+\_\+} & The moving strategy \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJumpDecorator_a94b32bed5b764df15980356aa8763abe}\label{classJumpDecorator_a94b32bed5b764df15980356aa8763abe}} 
+\index{JumpDecorator@{JumpDecorator}!IsCompleted@{IsCompleted}}
+\index{IsCompleted@{IsCompleted}!JumpDecorator@{JumpDecorator}}
+\doxysubsubsection{\texorpdfstring{IsCompleted()}{IsCompleted()}}
+{\footnotesize\ttfamily bool Jump\+Decorator\+::\+Is\+Completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if the strategy is complete. 
+
+\begin{DoxyReturn}{Returns}
+True if compelte, false otherwise 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classCelebrationDecorator_a7ce83ef692d22773bf40e8733e20329a}{Celebration\+Decorator}}.
+
+\mbox{\Hypertarget{classJumpDecorator_a6d46675428916bbe6acd10fb25d51f86}\label{classJumpDecorator_a6d46675428916bbe6acd10fb25d51f86}} 
+\index{JumpDecorator@{JumpDecorator}!Move@{Move}}
+\index{Move@{Move}!JumpDecorator@{JumpDecorator}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void Jump\+Decorator\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$}]{entity,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move the entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Entity that need to move \\
+\hline
+{\em dt} & Delta time \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classCelebrationDecorator_aaea8fd11f7d0e12dd79ccdc63ab1bbf6}{Celebration\+Decorator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/wu001026/csci-\/3081w-\/f22/\+Team-\/001-\/9-\/homework04/libs/transit/include/Jump\+Decorator.\+h\item 
+/home/wu001026/csci-\/3081w-\/f22/\+Team-\/001-\/9-\/homework04/libs/transit/src/Jump\+Decorator.\+cc\end{DoxyCompactItemize}

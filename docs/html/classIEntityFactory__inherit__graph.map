@@ -1,0 +1,7 @@
+<map id="IEntityFactory" name="IEntityFactory">
+<area shape="rect" id="node1" title="This class is responsible for creating entity." alt="" coords="235,5,347,32"/>
+<area shape="rect" id="node2" href="$classCompositeFactory.html" title="The class inherite from IEntityFactory. It is responsible for store factories for entities." alt="" coords="5,80,145,107"/>
+<area shape="rect" id="node3" href="$classDroneFactory.html" title="The class inherite from IEntityFactory. It is responsible for create drone." alt="" coords="170,80,279,107"/>
+<area shape="rect" id="node4" href="$classRobotFactory.html" title="This class is responsible for creating robot entity." alt="" coords="304,80,412,107"/>
+<area shape="rect" id="node5" href="$classStationFactory.html" title="The class inherite from IEntityFactory. It is responsible for create station." alt="" coords="436,80,552,107"/>
+</map>

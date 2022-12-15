@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classIEntity.html" title="Abstract controller class used in the Transit Service. Uses the Model View Controller Pattern." alt="" coords="5,81,69,108"/>
+<area shape="rect" id="node2" href="$classBatteryDecorator.html" title="This class inhertis from the IEntity class and is responsible for creating a batteryDecrator." alt="" coords="117,5,252,32"/>
+<area shape="rect" id="node3" href="$classDrone.html" title="Represents a drone in a physical system. Drones move using euler integration based on a specified vel..." alt="" coords="154,56,215,83"/>
+<area shape="rect" id="node4" href="$classRobot.html" title="Abstract controller class used in the Transit Service. Represents a robot in the map." alt="" coords="155,107,215,133"/>
+<area shape="rect" id="node5" href="$classStation.html" title="Represents a station in a physical system." alt="" coords="151,157,219,184"/>
+</map>

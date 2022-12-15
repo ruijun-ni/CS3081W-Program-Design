@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['getavailability_27',['GetAvailability',['../classBatteryDecorator.html#a7975d254f8762b49a9ac7bc826eb21f3',1,'BatteryDecorator::GetAvailability()'],['../classDrone.html#a479442805072af27a7ee628ed59d621e',1,'Drone::GetAvailability()'],['../classIEntity.html#a90348881691a37d5c3d63265ed3463b1',1,'IEntity::GetAvailability()'],['../classRobot.html#a2b56c4d4cf7b0ef07ce6713ffae6e490',1,'Robot::GetAvailability()']]],
+  ['getbattery_28',['GetBattery',['../classBatteryDecorator.html#afd178c875ec8467cf42377695124116f',1,'BatteryDecorator']]],
+  ['getchargestrategy_29',['getChargeStrategy',['../classDrone.html#a5c9a8813107039a3b4706b49f6b2fd24',1,'Drone']]],
+  ['getdestination_30',['GetDestination',['../classBatteryDecorator.html#a30d49a5e5efb93fad2ab4e5d77d26870',1,'BatteryDecorator::GetDestination()'],['../classDrone.html#adaf61822f659e8ab22fb633569288752',1,'Drone::GetDestination()'],['../classIEntity.html#a0dcaf865938ab1fb49c8389b5e580d90',1,'IEntity::GetDestination()'],['../classRobot.html#abe629d465798403a706f574b33284659',1,'Robot::GetDestination()'],['../classStation.html#a4206b2b614fcf181d40372fc47798656',1,'Station::GetDestination()']]],
+  ['getdetails_31',['GetDetails',['../classBatteryDecorator.html#a1334400df4041ca471b35ede6e978721',1,'BatteryDecorator::GetDetails()'],['../classDrone.html#aa038e4cb9540e6a4101ea70f311c8308',1,'Drone::GetDetails()'],['../classIEntity.html#a97c799400ce05e2ff2566adc4d7b9634',1,'IEntity::GetDetails()'],['../classRobot.html#a0ac023c6fb5d7ad58b180903010d2924',1,'Robot::GetDetails()'],['../classStation.html#afc4dee135ecfc745d3080e362dfa208e',1,'Station::GetDetails()']]],
+  ['getdirection_32',['GetDirection',['../classBatteryDecorator.html#a8487174df54456fe29406927f0542720',1,'BatteryDecorator::GetDirection()'],['../classDrone.html#aaf51e8007322a36d481ce9a546099e44',1,'Drone::GetDirection()'],['../classIEntity.html#aa99a8fef8b22195a5113c38ef51f086d',1,'IEntity::GetDirection()'],['../classRobot.html#a2d6dd7a322d2d2c0bc1c44566253b9f1',1,'Robot::GetDirection()'],['../classStation.html#ae514a5cdf61181cb9b7ad1dc4713de3c',1,'Station::GetDirection()']]],
+  ['getid_33',['GetId',['../classIEntity.html#a2bfa9ab304ff33b252fbd5a707e42995',1,'IEntity']]],
+  ['getinstance_34',['GetInstance',['../classSingleton.html#a72f8de8a40bc976d742cc53fcfd5188e',1,'Singleton']]],
+  ['getnearestentity_35',['GetNearestEntity',['../classDrone.html#a21d9dc799ee8a6c10b579fcab401bd57',1,'Drone']]],
+  ['getposition_36',['GetPosition',['../classBatteryDecorator.html#aaf2487adf2d58e855268877427cf5ba9',1,'BatteryDecorator::GetPosition()'],['../classDrone.html#a3d86b956f8722735b1d7e791dea703bc',1,'Drone::GetPosition()'],['../classIEntity.html#a9bc32587aab91761fc0e718612498199',1,'IEntity::GetPosition()'],['../classRobot.html#a0505da0b08d679a828c005879da63b16',1,'Robot::GetPosition()'],['../classStation.html#a4e00e785888cb25e07ddff401e04b00e',1,'Station::GetPosition()']]],
+  ['getspeed_37',['GetSpeed',['../classBatteryDecorator.html#a4ba88b753b061fcafe7b4891e375b199',1,'BatteryDecorator::GetSpeed()'],['../classDrone.html#a33d05f853306e480ab97049eb6408ef7',1,'Drone::GetSpeed()'],['../classIEntity.html#a6520d2b1dc71d092bab38ef9f5cc9ff4',1,'IEntity::GetSpeed()'],['../classRobot.html#ad199885470ae6e1109153526c21473c5',1,'Robot::GetSpeed()'],['../classStation.html#a9d9d8f66f43c4cfba2fc4afec4306ee0',1,'Station::GetSpeed()']]],
+  ['getstationstrategy_38',['getStationStrategy',['../classDrone.html#a8118a17920d1fd0eadddd08032d2b5b7',1,'Drone']]],
+  ['getstrategy_39',['getStrategy',['../classCelebrationDecorator.html#a4b3228258aae817d28393858ca5752cd',1,'CelebrationDecorator::getStrategy()'],['../classIStrategy.html#a985919d4ee716268978eb02c6c94db83',1,'IStrategy::getStrategy()']]],
+  ['getstrategyname_40',['GetStrategyName',['../classIEntity.html#a9b4a238a04f5cd56db89e50292355005',1,'IEntity::GetStrategyName()'],['../classRobot.html#af3e8590ef2a275caf25363079f7b4273',1,'Robot::GetStrategyName()']]],
+  ['gettargetdeststrategy_41',['getTargetDestStrategy',['../classDrone.html#ae33694ca365df0c9e640dce55248e297',1,'Drone']]],
+  ['gettargetposstrategy_42',['getTargetPosStrategy',['../classDrone.html#a99dc509b83d6766a5decb86072a0ef20',1,'Drone']]],
+  ['gettotaldistance_43',['GetTotalDistance',['../classSingleton.html#a9bd5ff2e747dd8fd2c87b0ead1ea2b40',1,'Singleton']]],
+  ['gettotaltime_44',['GetTotalTime',['../classSingleton.html#a2db970cfc9972f3699fe1194812c8695',1,'Singleton']]],
+  ['gettripdistance_45',['GetTripDistance',['../classSingleton.html#a1cee85965d06a304e5c4565ee90ff1ba',1,'Singleton']]],
+  ['gettriptime_46',['GetTripTime',['../classSingleton.html#aab4d729c6fc49e1ff02216ab3dda8d74',1,'Singleton']]],
+  ['graph_47',['graph',['../classIEntity.html#a5d4d1c3d5da8a816fe03522cd0b4fcb3',1,'IEntity::graph()'],['../classSimulationModel.html#afcef95308f9d635f6ab37f8fb0eb7ba7',1,'SimulationModel::graph()']]]
+];

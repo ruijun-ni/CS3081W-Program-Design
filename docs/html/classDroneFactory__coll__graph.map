@@ -1,0 +1,4 @@
+<map id="DroneFactory" name="DroneFactory">
+<area shape="rect" id="node1" title="The class inherite from IEntityFactory. It is responsible for create drone." alt="" coords="7,80,116,107"/>
+<area shape="rect" id="node2" href="$classIEntityFactory.html" title="This class is responsible for creating entity." alt="" coords="5,5,117,32"/>
+</map>

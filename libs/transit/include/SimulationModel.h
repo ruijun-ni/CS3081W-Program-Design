@@ -1,17 +1,18 @@
 #ifndef SIMULATION_MODEL_H_
 #define SIMULATION_MODEL_H_
 
-#include "IController.h"
 #include "CompositeFactory.h"
+#include "IController.h"
 #include "IEntity.h"
-#include "graph.h"
 #include "Singleton.h"
+#include "graph.h"
 using namespace routing;
 
 //--------------------  Model ----------------------------
-
-/// Simulation Model handling the transit simulation. The model can communicate
-/// with the controller.
+/**
+ * @brief Simulation Model handling the transit simulation. The model can communicate
+ * with the controller.
+ */
 class SimulationModel {
  public:
   /**
@@ -51,7 +52,7 @@ class SimulationModel {
    */
   void AddFactory(IEntityFactory* factory);
 
-  /** 
+  /**
    * @brief Shows the battery level of Drone
    */
   float ShowBattery();
@@ -70,11 +71,11 @@ class SimulationModel {
   }
 
  protected:
-  IController& controller;  //!< The controller the model used
-  std::vector<IEntity*> entities;  //!< Entities in the model
+  IController& controller;          //!< The controller the model used
+  std::vector<IEntity*> entities;   //!< Entities in the model
   std::vector<IEntity*> scheduler;  //!< Scheduler in the model
-  const IGraph* graph;  //!< Graph in the model
-  CompositeFactory* compFactory;  //!< The compositeFactory
+  const IGraph* graph;              //!< Graph in the model
+  CompositeFactory* compFactory;    //!< The compositeFactory
 };
 
 #endif

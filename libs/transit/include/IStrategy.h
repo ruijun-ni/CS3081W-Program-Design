@@ -8,6 +8,9 @@
 
 using namespace routing;
 
+/**
+ * @brief The abstract class that is resonpsible for entity moving 
+ */
 class IStrategy {
  public:
   /**

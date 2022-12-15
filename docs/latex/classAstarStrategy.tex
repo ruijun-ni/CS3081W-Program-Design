@@ -1,0 +1,100 @@
+\hypertarget{classAstarStrategy}{}\doxysection{Astar\+Strategy Class Reference}
+\label{classAstarStrategy}\index{AstarStrategy@{AstarStrategy}}
+
+
+this class inhertis from the \mbox{\hyperlink{classIStrategy}{I\+Strategy}} class and is responsible for generating the astar that the drone will take.  
+
+
+
+
+{\ttfamily \#include $<$Astar\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for Astar\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classAstarStrategy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Astar\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classAstarStrategy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAstarStrategy_aed2438fdb571dbe3974ee5ee29c8a7be}{Astar\+Strategy}} (\mbox{\hyperlink{classVector3}{Vector3}} position, \mbox{\hyperlink{classVector3}{Vector3}} destination, const I\+Graph $\ast$graph)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAstarStrategy_aaea127f0c592f085aa6acfd2135c0c73}\label{classAstarStrategy_aaea127f0c592f085aa6acfd2135c0c73}} 
+\mbox{\hyperlink{classAstarStrategy_aaea127f0c592f085aa6acfd2135c0c73}{$\sim$\+Astar\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAstarStrategy_afd13e7ed2b1872f01aa2a2f4b07b41c3}{Move}} (\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$entity, double dt)
+\begin{DoxyCompactList}\small\item\em Entity\textquotesingle{}s move function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAstarStrategy_a65ae8d490fe820fa152a379da6845103}\label{classAstarStrategy_a65ae8d490fe820fa152a379da6845103}} 
+bool \mbox{\hyperlink{classAstarStrategy_a65ae8d490fe820fa152a379da6845103}{Is\+Completed}} ()
+\begin{DoxyCompactList}\small\item\em If the strategy is completed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+this class inhertis from the \mbox{\hyperlink{classIStrategy}{I\+Strategy}} class and is responsible for generating the astar that the drone will take. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAstarStrategy_aed2438fdb571dbe3974ee5ee29c8a7be}\label{classAstarStrategy_aed2438fdb571dbe3974ee5ee29c8a7be}} 
+\index{AstarStrategy@{AstarStrategy}!AstarStrategy@{AstarStrategy}}
+\index{AstarStrategy@{AstarStrategy}!AstarStrategy@{AstarStrategy}}
+\doxysubsubsection{\texorpdfstring{AstarStrategy()}{AstarStrategy()}}
+{\footnotesize\ttfamily Astar\+Strategy\+::\+Astar\+Strategy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{position,  }\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{destination,  }\item[{const I\+Graph $\ast$}]{graph }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the robot \\
+\hline
+{\em destination} & The destination of robot want to go \\
+\hline
+{\em graph} & The graph want to set \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAstarStrategy_afd13e7ed2b1872f01aa2a2f4b07b41c3}\label{classAstarStrategy_afd13e7ed2b1872f01aa2a2f4b07b41c3}} 
+\index{AstarStrategy@{AstarStrategy}!Move@{Move}}
+\index{Move@{Move}!AstarStrategy@{AstarStrategy}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void Astar\+Strategy\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$}]{entity,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Entity\textquotesingle{}s move function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity want to move \\
+\hline
+{\em dt} & The delta time \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIStrategy_a69254389f4ef9a851dc5d40c4cc9aacd}{I\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/wu001026/csci-\/3081w-\/f22/\+Team-\/001-\/9-\/homework04/libs/transit/include/Astar\+Strategy.\+h\item 
+/home/wu001026/csci-\/3081w-\/f22/\+Team-\/001-\/9-\/homework04/libs/transit/src/Astar\+Strategy.\+cc\end{DoxyCompactItemize}

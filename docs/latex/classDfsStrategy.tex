@@ -1,0 +1,100 @@
+\hypertarget{classDfsStrategy}{}\doxysection{Dfs\+Strategy Class Reference}
+\label{classDfsStrategy}\index{DfsStrategy@{DfsStrategy}}
+
+
+this class inhertis from the \mbox{\hyperlink{classIStrategy}{I\+Strategy}} class and is responsible for generating the dfs that the drone will take.  
+
+
+
+
+{\ttfamily \#include $<$Dfs\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for Dfs\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classDfsStrategy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dfs\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classDfsStrategy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDfsStrategy_ac62cd4f89c6d75a4a719397cfb187afa}{Dfs\+Strategy}} (\mbox{\hyperlink{classVector3}{Vector3}} position, \mbox{\hyperlink{classVector3}{Vector3}} destination, const I\+Graph $\ast$graph)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDfsStrategy_aa7e5c9681810fcc22194268b2ddce21e}\label{classDfsStrategy_aa7e5c9681810fcc22194268b2ddce21e}} 
+\mbox{\hyperlink{classDfsStrategy_aa7e5c9681810fcc22194268b2ddce21e}{$\sim$\+Dfs\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDfsStrategy_aab5a0a5c97f710075634b81a3e00ecf9}{Move}} (\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$entity, double dt)
+\begin{DoxyCompactList}\small\item\em Entity\textquotesingle{}s move function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDfsStrategy_a30fb7b230d0244cd87de51a13a8d8c5b}\label{classDfsStrategy_a30fb7b230d0244cd87de51a13a8d8c5b}} 
+bool \mbox{\hyperlink{classDfsStrategy_a30fb7b230d0244cd87de51a13a8d8c5b}{Is\+Completed}} ()
+\begin{DoxyCompactList}\small\item\em If the strategy is completed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+this class inhertis from the \mbox{\hyperlink{classIStrategy}{I\+Strategy}} class and is responsible for generating the dfs that the drone will take. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDfsStrategy_ac62cd4f89c6d75a4a719397cfb187afa}\label{classDfsStrategy_ac62cd4f89c6d75a4a719397cfb187afa}} 
+\index{DfsStrategy@{DfsStrategy}!DfsStrategy@{DfsStrategy}}
+\index{DfsStrategy@{DfsStrategy}!DfsStrategy@{DfsStrategy}}
+\doxysubsubsection{\texorpdfstring{DfsStrategy()}{DfsStrategy()}}
+{\footnotesize\ttfamily Dfs\+Strategy\+::\+Dfs\+Strategy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{position,  }\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{destination,  }\item[{const I\+Graph $\ast$}]{graph }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the robot \\
+\hline
+{\em destination} & The destination of robot want to go \\
+\hline
+{\em graph} & The graph want to set \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDfsStrategy_aab5a0a5c97f710075634b81a3e00ecf9}\label{classDfsStrategy_aab5a0a5c97f710075634b81a3e00ecf9}} 
+\index{DfsStrategy@{DfsStrategy}!Move@{Move}}
+\index{Move@{Move}!DfsStrategy@{DfsStrategy}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void Dfs\+Strategy\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$}]{entity,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Entity\textquotesingle{}s move function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity want to move \\
+\hline
+{\em dt} & The delta time \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIStrategy_a69254389f4ef9a851dc5d40c4cc9aacd}{I\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/wu001026/csci-\/3081w-\/f22/\+Team-\/001-\/9-\/homework04/libs/transit/include/Dfs\+Strategy.\+h\item 
+/home/wu001026/csci-\/3081w-\/f22/\+Team-\/001-\/9-\/homework04/libs/transit/src/Dfs\+Strategy.\+cc\end{DoxyCompactItemize}

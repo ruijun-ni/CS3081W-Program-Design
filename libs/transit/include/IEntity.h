@@ -10,9 +10,9 @@
 using namespace routing;
 
 //--------------------  Controller Interface ----------------------------
-
-/// Abstract controller class used in the Transit Service.  Uses the Model View
-/// Controller Pattern
+/**
+ * @brief Abstract controller class used in the Transit Service. Uses the Model View Controller Pattern.
+ */
 class IEntity {
  public:
   /**

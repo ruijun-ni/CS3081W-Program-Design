@@ -1,0 +1,187 @@
+\hypertarget{classSingleton}{}\doxysection{Singleton Class Reference}
+\label{classSingleton}\index{Singleton@{Singleton}}
+
+
+Use for \mbox{\hyperlink{classSingleton}{Singleton}} pattern aiming to collect drone\textquotesingle{}s traveling data.  
+
+
+
+
+{\ttfamily \#include $<$Singleton.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSingleton_a543d81b5f1458e51fe1a56082b6afccc}\label{classSingleton_a543d81b5f1458e51fe1a56082b6afccc}} 
+\mbox{\hyperlink{classSingleton_a543d81b5f1458e51fe1a56082b6afccc}{$\sim$\+Singleton}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSingleton_a66ed00d851503e87371bd02b5e4e2eb3}\label{classSingleton_a66ed00d851503e87371bd02b5e4e2eb3}} 
+void \mbox{\hyperlink{classSingleton_a66ed00d851503e87371bd02b5e4e2eb3}{Add\+Passenger}} ()
+\begin{DoxyCompactList}\small\item\em Collect number of scheduled passengers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSingleton_a1ca4d237a2b940c4bf998d59e2539d20}{Add\+Trip\+Distance}} (double d)
+\begin{DoxyCompactList}\small\item\em Collect trip distance of drone. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSingleton_aa4bd45840f05261b1f401c88264a00d3}{Add\+Total\+Distance}} (double d)
+\begin{DoxyCompactList}\small\item\em Collect total distance of drone. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSingleton_a0564794b7c53e5cbab0e41e4d37a1e6b}{Add\+Total\+Time}} (double t)
+\begin{DoxyCompactList}\small\item\em Collect total time of drone. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSingleton_ae8b2107be673ae8c8da1d6fe079d89d7}{Add\+Trip\+Time}} (double t)
+\begin{DoxyCompactList}\small\item\em Collect trip time of drone. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSingleton_a08198156ba6c6a286956514d2d0337be}\label{classSingleton_a08198156ba6c6a286956514d2d0337be}} 
+void \mbox{\hyperlink{classSingleton_a08198156ba6c6a286956514d2d0337be}{write2\+C\+SV}} ()
+\begin{DoxyCompactList}\small\item\em Write C\+SV file based on collected data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSingleton_a0de4f483e012a1a4766f8165a9680088}\label{classSingleton_a0de4f483e012a1a4766f8165a9680088}} 
+void \mbox{\hyperlink{classSingleton_a0de4f483e012a1a4766f8165a9680088}{Clear\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em Clear the collected distance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSingleton_a995f2de2fb0c366938f7007abc861835}\label{classSingleton_a995f2de2fb0c366938f7007abc861835}} 
+void \mbox{\hyperlink{classSingleton_a995f2de2fb0c366938f7007abc861835}{Clear\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Clear the collected time. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSingleton_a9bd5ff2e747dd8fd2c87b0ead1ea2b40}{Get\+Total\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em Get the total distance. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSingleton_a1cee85965d06a304e5c4565ee90ff1ba}{Get\+Trip\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em Get the trip distance. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSingleton_a2db970cfc9972f3699fe1194812c8695}{Get\+Total\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Get the total time. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSingleton_aab4d729c6fc49e1ff02216ab3dda8d74}{Get\+Trip\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Get the trip time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classSingleton}{Singleton}} $\ast$ \mbox{\hyperlink{classSingleton_a72f8de8a40bc976d742cc53fcfd5188e}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Get the same instance of \mbox{\hyperlink{classSingleton}{Singleton}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Use for \mbox{\hyperlink{classSingleton}{Singleton}} pattern aiming to collect drone\textquotesingle{}s traveling data. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSingleton_aa4bd45840f05261b1f401c88264a00d3}\label{classSingleton_aa4bd45840f05261b1f401c88264a00d3}} 
+\index{Singleton@{Singleton}!AddTotalDistance@{AddTotalDistance}}
+\index{AddTotalDistance@{AddTotalDistance}!Singleton@{Singleton}}
+\doxysubsubsection{\texorpdfstring{AddTotalDistance()}{AddTotalDistance()}}
+{\footnotesize\ttfamily void Singleton\+::\+Add\+Total\+Distance (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})}
+
+
+
+Collect total distance of drone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & Distance to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSingleton_a0564794b7c53e5cbab0e41e4d37a1e6b}\label{classSingleton_a0564794b7c53e5cbab0e41e4d37a1e6b}} 
+\index{Singleton@{Singleton}!AddTotalTime@{AddTotalTime}}
+\index{AddTotalTime@{AddTotalTime}!Singleton@{Singleton}}
+\doxysubsubsection{\texorpdfstring{AddTotalTime()}{AddTotalTime()}}
+{\footnotesize\ttfamily void Singleton\+::\+Add\+Total\+Time (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})}
+
+
+
+Collect total time of drone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSingleton_a1ca4d237a2b940c4bf998d59e2539d20}\label{classSingleton_a1ca4d237a2b940c4bf998d59e2539d20}} 
+\index{Singleton@{Singleton}!AddTripDistance@{AddTripDistance}}
+\index{AddTripDistance@{AddTripDistance}!Singleton@{Singleton}}
+\doxysubsubsection{\texorpdfstring{AddTripDistance()}{AddTripDistance()}}
+{\footnotesize\ttfamily void Singleton\+::\+Add\+Trip\+Distance (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})}
+
+
+
+Collect trip distance of drone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & Distance to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSingleton_ae8b2107be673ae8c8da1d6fe079d89d7}\label{classSingleton_ae8b2107be673ae8c8da1d6fe079d89d7}} 
+\index{Singleton@{Singleton}!AddTripTime@{AddTripTime}}
+\index{AddTripTime@{AddTripTime}!Singleton@{Singleton}}
+\doxysubsubsection{\texorpdfstring{AddTripTime()}{AddTripTime()}}
+{\footnotesize\ttfamily void Singleton\+::\+Add\+Trip\+Time (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})}
+
+
+
+Collect trip time of drone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSingleton_a72f8de8a40bc976d742cc53fcfd5188e}\label{classSingleton_a72f8de8a40bc976d742cc53fcfd5188e}} 
+\index{Singleton@{Singleton}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!Singleton@{Singleton}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSingleton}{Singleton}} $\ast$ Singleton\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the same instance of \mbox{\hyperlink{classSingleton}{Singleton}}. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classSingleton}{Singleton}} instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSingleton_a9bd5ff2e747dd8fd2c87b0ead1ea2b40}\label{classSingleton_a9bd5ff2e747dd8fd2c87b0ead1ea2b40}} 
+\index{Singleton@{Singleton}!GetTotalDistance@{GetTotalDistance}}
+\index{GetTotalDistance@{GetTotalDistance}!Singleton@{Singleton}}
+\doxysubsubsection{\texorpdfstring{GetTotalDistance()}{GetTotalDistance()}}
+{\footnotesize\ttfamily double Singleton\+::\+Get\+Total\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the total distance. 
+
+\begin{DoxyReturn}{Returns}
+the collected total distance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSingleton_a2db970cfc9972f3699fe1194812c8695}\label{classSingleton_a2db970cfc9972f3699fe1194812c8695}} 
+\index{Singleton@{Singleton}!GetTotalTime@{GetTotalTime}}
+\index{GetTotalTime@{GetTotalTime}!Singleton@{Singleton}}
+\doxysubsubsection{\texorpdfstring{GetTotalTime()}{GetTotalTime()}}
+{\footnotesize\ttfamily double Singleton\+::\+Get\+Total\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the total time. 
+
+\begin{DoxyReturn}{Returns}
+the total time 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSingleton_a1cee85965d06a304e5c4565ee90ff1ba}\label{classSingleton_a1cee85965d06a304e5c4565ee90ff1ba}} 
+\index{Singleton@{Singleton}!GetTripDistance@{GetTripDistance}}
+\index{GetTripDistance@{GetTripDistance}!Singleton@{Singleton}}
+\doxysubsubsection{\texorpdfstring{GetTripDistance()}{GetTripDistance()}}
+{\footnotesize\ttfamily double Singleton\+::\+Get\+Trip\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the trip distance. 
+
+\begin{DoxyReturn}{Returns}
+the collected trip distance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSingleton_aab4d729c6fc49e1ff02216ab3dda8d74}\label{classSingleton_aab4d729c6fc49e1ff02216ab3dda8d74}} 
+\index{Singleton@{Singleton}!GetTripTime@{GetTripTime}}
+\index{GetTripTime@{GetTripTime}!Singleton@{Singleton}}
+\doxysubsubsection{\texorpdfstring{GetTripTime()}{GetTripTime()}}
+{\footnotesize\ttfamily double Singleton\+::\+Get\+Trip\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the trip time. 
+
+\begin{DoxyReturn}{Returns}
+the collected trip time 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/wu001026/csci-\/3081w-\/f22/\+Team-\/001-\/9-\/homework04/libs/transit/include/Singleton.\+h\item 
+/home/wu001026/csci-\/3081w-\/f22/\+Team-\/001-\/9-\/homework04/libs/transit/src/Singleton.\+cc\end{DoxyCompactItemize}

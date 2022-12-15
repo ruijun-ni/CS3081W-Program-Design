@@ -1,0 +1,4 @@
+<map id="AstarStrategy" name="AstarStrategy">
+<area shape="rect" id="node1" title="this class inhertis from the IStrategy class and is responsible for generating the astar that the dro..." alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node2" href="$classIStrategy.html" title="The abstract class that is resonpsible for entity moving." alt="" coords="20,5,101,32"/>
+</map>

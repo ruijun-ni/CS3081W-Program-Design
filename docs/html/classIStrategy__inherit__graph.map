@@ -1,0 +1,10 @@
+<map id="IStrategy" name="IStrategy">
+<area shape="rect" id="node1" title="The abstract class that is resonpsible for entity moving." alt="" coords="331,5,412,32"/>
+<area shape="rect" id="node2" href="$classAstarStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the astar that the dro..." alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node3" href="$classBeelineStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the beeline that the d..." alt="" coords="140,80,267,107"/>
+<area shape="rect" id="node4" href="$classCelebrationDecorator.html" title="The class inherite from IStrategy. It is responsible for celebration behavior." alt="" coords="291,80,452,107"/>
+<area shape="rect" id="node7" href="$classDfsStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the dfs that the drone..." alt="" coords="477,80,575,107"/>
+<area shape="rect" id="node8" href="$classDijkstraStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the dijkstra that the ..." alt="" coords="599,80,727,107"/>
+<area shape="rect" id="node5" href="$classJumpDecorator.html" title="The class inherite from CelebrationDecorator. It is responsible for jump celebration behavior." alt="" coords="241,155,360,181"/>
+<area shape="rect" id="node6" href="$classSpinDecorator.html" title="This class inherite from CelebrationDecorator. It is responsible for spin celebration behavior." alt="" coords="385,155,499,181"/>
+</map>

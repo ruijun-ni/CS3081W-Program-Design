@@ -1,0 +1,240 @@
+\hypertarget{classBatteryDecorator}{}\doxysection{Battery\+Decorator Class Reference}
+\label{classBatteryDecorator}\index{BatteryDecorator@{BatteryDecorator}}
+
+
+This class inhertis from the \mbox{\hyperlink{classIEntity}{I\+Entity}} class and is responsible for creating a battery\+Decrator.  
+
+
+
+
+{\ttfamily \#include $<$Battery\+Decorator.\+h$>$}
+
+
+
+Inheritance diagram for Battery\+Decorator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classBatteryDecorator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Battery\+Decorator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classBatteryDecorator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBatteryDecorator_a8234e4df5bb25242c554ddc0c23350c8}{Battery\+Decorator}} (\mbox{\hyperlink{classDrone}{Drone}} $\ast$drone\+\_\+)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBatteryDecorator_a0036d03d5fc869eb39e55734d1e5bb87}\label{classBatteryDecorator_a0036d03d5fc869eb39e55734d1e5bb87}} 
+\mbox{\hyperlink{classBatteryDecorator_a0036d03d5fc869eb39e55734d1e5bb87}{$\sim$\+Battery\+Decorator}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classBatteryDecorator_afd178c875ec8467cf42377695124116f}{Get\+Battery}} () const
+\begin{DoxyCompactList}\small\item\em Get the battery of drone. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBatteryDecorator_aacd48268e79a001115458b5ce926b56a}{Set\+Battery}} (float battery\+\_\+)
+\begin{DoxyCompactList}\small\item\em Set the battery power of drone. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBatteryDecorator_ae4caa67173a090efd793861b26e8e751}{can\+Arrive}} ()
+\begin{DoxyCompactList}\small\item\em Check if the current energy can support the trip. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBatteryDecorator_a9169f6180a73457ef5a593be987c09b4}\label{classBatteryDecorator_a9169f6180a73457ef5a593be987c09b4}} 
+void \mbox{\hyperlink{classBatteryDecorator_a9169f6180a73457ef5a593be987c09b4}{Update}} (double dt, std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ scheduler)
+\begin{DoxyCompactList}\small\item\em Move the drone base on battery level. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classBatteryDecorator_a4ba88b753b061fcafe7b4891e375b199}{Get\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em Get the speed of drone. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classBatteryDecorator_aaf2487adf2d58e855268877427cf5ba9}{Get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Tet the position of drone. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classBatteryDecorator_a8487174df54456fe29406927f0542720}{Get\+Direction}} () const
+\begin{DoxyCompactList}\small\item\em Get the direction of drone. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classBatteryDecorator_a30d49a5e5efb93fad2ab4e5d77d26870}{Get\+Destination}} () const
+\begin{DoxyCompactList}\small\item\em Get the destination of drone. \end{DoxyCompactList}\item 
+Json\+Object \mbox{\hyperlink{classBatteryDecorator_a1334400df4041ca471b35ede6e978721}{Get\+Details}} () const
+\begin{DoxyCompactList}\small\item\em Get the detail of drone. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBatteryDecorator_a7975d254f8762b49a9ac7bc826eb21f3}{Get\+Availability}} () const
+\begin{DoxyCompactList}\small\item\em Get the availablity of drone. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBatteryDecorator_a88e1b76a72591c0e9c707ab8adbd3175}\label{classBatteryDecorator_a88e1b76a72591c0e9c707ab8adbd3175}} 
+void \mbox{\hyperlink{classBatteryDecorator_a88e1b76a72591c0e9c707ab8adbd3175}{Charge}} (double dt)
+\begin{DoxyCompactList}\small\item\em Charge the battery. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBatteryDecorator_aa176f84c6ec8957f1446da0c8ca1edc5}\label{classBatteryDecorator_aa176f84c6ec8957f1446da0c8ca1edc5}} 
+void \mbox{\hyperlink{classBatteryDecorator_aa176f84c6ec8957f1446da0c8ca1edc5}{Set\+Graph}} (const I\+Graph $\ast$\mbox{\hyperlink{classIEntity_a5d4d1c3d5da8a816fe03522cd0b4fcb3}{graph}})
+\begin{DoxyCompactList}\small\item\em Set the graph of drone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class inhertis from the \mbox{\hyperlink{classIEntity}{I\+Entity}} class and is responsible for creating a battery\+Decrator. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBatteryDecorator_a8234e4df5bb25242c554ddc0c23350c8}\label{classBatteryDecorator_a8234e4df5bb25242c554ddc0c23350c8}} 
+\index{BatteryDecorator@{BatteryDecorator}!BatteryDecorator@{BatteryDecorator}}
+\index{BatteryDecorator@{BatteryDecorator}!BatteryDecorator@{BatteryDecorator}}
+\doxysubsubsection{\texorpdfstring{BatteryDecorator()}{BatteryDecorator()}}
+{\footnotesize\ttfamily Battery\+Decorator\+::\+Battery\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDrone}{Drone}} $\ast$}]{drone\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em drone\+\_\+} & \mbox{\hyperlink{classDrone}{Drone}} that use to initialize the member variable \char`\"{}drone\char`\"{} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBatteryDecorator_ae4caa67173a090efd793861b26e8e751}\label{classBatteryDecorator_ae4caa67173a090efd793861b26e8e751}} 
+\index{BatteryDecorator@{BatteryDecorator}!canArrive@{canArrive}}
+\index{canArrive@{canArrive}!BatteryDecorator@{BatteryDecorator}}
+\doxysubsubsection{\texorpdfstring{canArrive()}{canArrive()}}
+{\footnotesize\ttfamily bool Battery\+Decorator\+::can\+Arrive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the current energy can support the trip. 
+
+\begin{DoxyReturn}{Returns}
+If the drone can arrive estination, return true. Otherwise, false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBatteryDecorator_a7975d254f8762b49a9ac7bc826eb21f3}\label{classBatteryDecorator_a7975d254f8762b49a9ac7bc826eb21f3}} 
+\index{BatteryDecorator@{BatteryDecorator}!GetAvailability@{GetAvailability}}
+\index{GetAvailability@{GetAvailability}!BatteryDecorator@{BatteryDecorator}}
+\doxysubsubsection{\texorpdfstring{GetAvailability()}{GetAvailability()}}
+{\footnotesize\ttfamily bool Battery\+Decorator\+::\+Get\+Availability (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the availablity of drone. 
+
+\begin{DoxyReturn}{Returns}
+The availability of drone 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a90348881691a37d5c3d63265ed3463b1}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBatteryDecorator_afd178c875ec8467cf42377695124116f}\label{classBatteryDecorator_afd178c875ec8467cf42377695124116f}} 
+\index{BatteryDecorator@{BatteryDecorator}!GetBattery@{GetBattery}}
+\index{GetBattery@{GetBattery}!BatteryDecorator@{BatteryDecorator}}
+\doxysubsubsection{\texorpdfstring{GetBattery()}{GetBattery()}}
+{\footnotesize\ttfamily float Battery\+Decorator\+::\+Get\+Battery (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the battery of drone. 
+
+\begin{DoxyReturn}{Returns}
+The batter power 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBatteryDecorator_a30d49a5e5efb93fad2ab4e5d77d26870}\label{classBatteryDecorator_a30d49a5e5efb93fad2ab4e5d77d26870}} 
+\index{BatteryDecorator@{BatteryDecorator}!GetDestination@{GetDestination}}
+\index{GetDestination@{GetDestination}!BatteryDecorator@{BatteryDecorator}}
+\doxysubsubsection{\texorpdfstring{GetDestination()}{GetDestination()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Battery\+Decorator\+::\+Get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the destination of drone. 
+
+\begin{DoxyReturn}{Returns}
+The destination of drone 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a0dcaf865938ab1fb49c8389b5e580d90}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBatteryDecorator_a1334400df4041ca471b35ede6e978721}\label{classBatteryDecorator_a1334400df4041ca471b35ede6e978721}} 
+\index{BatteryDecorator@{BatteryDecorator}!GetDetails@{GetDetails}}
+\index{GetDetails@{GetDetails}!BatteryDecorator@{BatteryDecorator}}
+\doxysubsubsection{\texorpdfstring{GetDetails()}{GetDetails()}}
+{\footnotesize\ttfamily Json\+Object Battery\+Decorator\+::\+Get\+Details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the detail of drone. 
+
+\begin{DoxyReturn}{Returns}
+The detail of drone 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a97c799400ce05e2ff2566adc4d7b9634}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBatteryDecorator_a8487174df54456fe29406927f0542720}\label{classBatteryDecorator_a8487174df54456fe29406927f0542720}} 
+\index{BatteryDecorator@{BatteryDecorator}!GetDirection@{GetDirection}}
+\index{GetDirection@{GetDirection}!BatteryDecorator@{BatteryDecorator}}
+\doxysubsubsection{\texorpdfstring{GetDirection()}{GetDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Battery\+Decorator\+::\+Get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the direction of drone. 
+
+\begin{DoxyReturn}{Returns}
+The direction of drone 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_aa99a8fef8b22195a5113c38ef51f086d}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBatteryDecorator_aaf2487adf2d58e855268877427cf5ba9}\label{classBatteryDecorator_aaf2487adf2d58e855268877427cf5ba9}} 
+\index{BatteryDecorator@{BatteryDecorator}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!BatteryDecorator@{BatteryDecorator}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Battery\+Decorator\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Tet the position of drone. 
+
+\begin{DoxyReturn}{Returns}
+The position of drone 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a9bc32587aab91761fc0e718612498199}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBatteryDecorator_a4ba88b753b061fcafe7b4891e375b199}\label{classBatteryDecorator_a4ba88b753b061fcafe7b4891e375b199}} 
+\index{BatteryDecorator@{BatteryDecorator}!GetSpeed@{GetSpeed}}
+\index{GetSpeed@{GetSpeed}!BatteryDecorator@{BatteryDecorator}}
+\doxysubsubsection{\texorpdfstring{GetSpeed()}{GetSpeed()}}
+{\footnotesize\ttfamily float Battery\+Decorator\+::\+Get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the speed of drone. 
+
+\begin{DoxyReturn}{Returns}
+The speed of drone 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a6520d2b1dc71d092bab38ef9f5cc9ff4}{I\+Entity}}.
+
+\mbox{\Hypertarget{classBatteryDecorator_aacd48268e79a001115458b5ce926b56a}\label{classBatteryDecorator_aacd48268e79a001115458b5ce926b56a}} 
+\index{BatteryDecorator@{BatteryDecorator}!SetBattery@{SetBattery}}
+\index{SetBattery@{SetBattery}!BatteryDecorator@{BatteryDecorator}}
+\doxysubsubsection{\texorpdfstring{SetBattery()}{SetBattery()}}
+{\footnotesize\ttfamily void Battery\+Decorator\+::\+Set\+Battery (\begin{DoxyParamCaption}\item[{float}]{battery\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the battery power of drone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em battery} & The Amount of battery power going to be set \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/wu001026/csci-\/3081w-\/f22/\+Team-\/001-\/9-\/homework04/libs/transit/include/Battery\+Decorator.\+h\item 
+/home/wu001026/csci-\/3081w-\/f22/\+Team-\/001-\/9-\/homework04/libs/transit/src/Battery\+Decorator.\+cc\end{DoxyCompactItemize}
