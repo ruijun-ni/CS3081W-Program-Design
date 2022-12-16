@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev
 
 # Let's make a new folder called /app . This is where we'll put our project code
-RUN make clean
 RUN make -j
 RUN ./build/bin/transit_service 8081 apps/transit_service/web/
 
