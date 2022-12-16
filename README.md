@@ -102,5 +102,9 @@ We can get the consequence by comparing the column data of distance traveled (tr
 ## Sprint Retrospective
 In this project, we applied Agile methodology for project management. We used Scrum to create a fixed-length iteration called "sprint." Before we started the sprint, our team created tasks we planned to do in the "Backlog." For example, we created tasks like "get idea checked off," "add charge station entity," "display battery level in the frontend," etc. And then, we start the sprint. We have *daily standup meetings* and assign tasks to teammates. Applying the Agile methodology improves flexibility, collaboration, transparency, and delivery speed. Agile encourages our team to work together and share information openly and transparently. This helps foster teamwork and accountability among team members and can lead to better collaboration and more efficient problem-solving. What went well in our sprint included meeting the sprint goals and objectives, delivering high-quality work, maintaining good communication, and good collaboration within the team. What could have gone better in our sprint was that we experienced challenges and obstacles that slowed progress. For example, we encountered a bug when writing the battery decorator, which took us more time than estimated to finish this part. Then we communicated with teammates, decided to adjust our timeline, and spent more time on this task, even devoting the weekend to completing the task. We learned from using Agile sprint in this project that it is essential to plan ahead, communicate openly and transparently with the team, monitor progress, and adjust the plan as needed.
 
+## Video Presentation Link
+Here is the link to our video presentation.
+https://drive.google.com/file/d/18chnQXFI6fB-d6FXwq9ldCMYQLbfFDSa/view?usp=sharing
+
 ## UML Diagram
 ![UML Diagram](./UML.png)
