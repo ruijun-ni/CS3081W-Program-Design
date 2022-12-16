@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
 # RUN /bin/sh -c make -j
 RUN mkdir -p /app
 WORKDIR /app
+CMD ls
 COPY ./Team-001-9-homework04 /app
 RUN make -j
 CMD ./build/bin/transit_service 8081 apps/transit_service/web/
