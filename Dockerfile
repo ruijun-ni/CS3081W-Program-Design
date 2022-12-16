@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y \
 
 # Let's make a new folder called /app . This is where we'll put our project code
 # RUN /bin/sh -c make -j
+RUN mkdir -p /app
+COPY ./Team-001-9-homework04 /app
 RUN make -j
 CMD ./build/bin/transit_service 8081 apps/transit_service/web/
 
