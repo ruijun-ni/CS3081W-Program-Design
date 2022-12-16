@@ -27,7 +27,7 @@ If you are using SSH, you will use the same hostnames as described in how to con
 One of the reasons you might not be able to log into a lab machine is that you reached your CSE Labs Account disk quota. <br>
 To free up space, [see here](https://github.umn.edu/umn-csci-3081-F22/shared-upstream/tree/main/FAQs/CSE%20Disk%20Quota%20Exceeds)
 
-### Retrieve Materials
+### Retrieve Materials(Docker)
 You have two ways to get the materials
 
 1. Clone **Team-001-9-homework04** repo
