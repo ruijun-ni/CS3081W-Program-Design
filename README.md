@@ -36,7 +36,7 @@ You have two ways to get the materials
     ```
 2. Download the zip in the main branch.
 
-3. TODO: complete instruction for docker
+3. Download the Docker image. Here is the link: https://hub.docker.com/repository/docker/ryan0915/team-001-9-homework04
 
 ### Compile and Run
 1. Make sure your linux OS is installed and running. Locate to the root directory, then complie the program using following command.
