@@ -1,0 +1,5 @@
+<map id="IEntity" name="IEntity">
+<area shape="rect" id="node1" title="Abstract controller class used in the Transit Service." alt="" coords="47,5,111,32"/>
+<area shape="rect" id="node2" href="$classDrone.html" title="Represents a drone in a physical system. Drones move using euler integration based on a specified vel..." alt="" coords="5,80,67,107"/>
+<area shape="rect" id="node3" href="$classRobot.html" title="Abstract controller class used in the Transit Service. Represents a robot in the map." alt="" coords="91,80,151,107"/>
+</map>

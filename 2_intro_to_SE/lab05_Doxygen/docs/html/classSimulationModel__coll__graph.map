@@ -1,0 +1,4 @@
+<map id="SimulationModel" name="SimulationModel">
+<area shape="rect" id="node1" title="Simulation Model handling the transit simulation. The model can communicate with the controller." alt="" coords="5,95,137,121"/>
+<area shape="rect" id="node2" href="$classIController.html" title="Abstract controller class used in the Transit Service." alt="" coords="26,5,117,32"/>
+</map>

@@ -1,0 +1,169 @@
+<html>
+
+<head>
+    <style>
+        .trip {
+            margin-left: 50px;
+        }
+
+        #popup {
+            padding: 30px;
+            position: absolute;
+            left: 400px;
+            top: 400px;
+            z-index: 10;
+            background-color: lightblue;
+            border: 1px;
+            border-style: solid;
+        }
+
+        .map {
+            position: absolute;
+            cursor: crosshair;
+            left: 100px;
+        }
+
+        .indent {
+            margin-bottom: 20px;
+        }
+
+        #trips {
+            position: absolute;
+            left: 1150px;
+        }
+
+        #search-strategy {
+            width: 100px;
+        }
+    </style>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/WSApi.js"></script>
+</head>
+
+<body>
+    <div id="popup">
+        <h2>Your trip is scheduled!</h2>
+    </div>
+    <div>
+        <h1>Request a Trip:</h1>
+    </div>
+    <div class="indent">Name: <input id="name" type="Text"></div>
+    <!-- <div class="indent">Search Strategy:
+        <select id="search-strategy">
+            <option value="beeline">Beeline</option>
+            <option value="astar">Astar</option>
+            <option value="dfs">DFS</option>
+            <option value="dijkstra">Dijkstra</option>
+        </select>
+    </div> -->
+    <div class="indent" style="width: 1000px; height: 650px;">Select Start / Destination:<br><br>
+        <div><img src="assets/texture/umn.png" width="1000" height="600" class="map">
+            <svg id="map" width="1000" height="600" class="map">
+            </svg>
+        </div>
+
+        <div id="trips">
+            <div id="list" style="width: 400px">
+                <p style="font-weight: bold;">Trips:</p>
+            </div>
+        </div>
+    </div>
+    <div><input type="button" value="Schedule Trip" onclick="schedule()"></div>
+    <div id="nameError"></div>
+
+    <script>
+        // Web Sockets API for communication with the backend
+        let api = new WSApi();
+
+        var trip = [];
+
+        // This method is called when the document is loaded
+        $(document).ready(function () {
+            // hide the popup
+            $("#popup").hide();
+
+            // register a mouse click event that adds circles on an image
+            $('#map').click(function (e) {
+                if(trip.length < 2){
+                    var posX = e.pageX - $(this).offset().left;
+                    var posY = e.pageY - $(this).offset().top;
+                    $("#map").append('<circle cx="' + posX + '" cy="' + posY + '" r="10" stroke="green" stroke-width="4" fill="yellow" />');
+                    $("#map").html($("#map").html());
+                    trip.push([posX, posY]);
+                } else {
+                    $("#map").empty();
+                    $("#map").append('<circle cx="' + trip[0][0] + '" cy="' + trip[0][1] + '" r="10" stroke="green" stroke-width="4" fill="yellow" />');
+                    var posX = e.pageX - $(this).offset().left;
+                    var posY = e.pageY - $(this).offset().top;
+                    $("#map").append('<circle cx="' + posX + '" cy="' + posY + '" r="10" stroke="green" stroke-width="4" fill="yellow" />');
+                    $("#map").html($("#map").html());
+                    trip.insert(1, [[posX, posY]]);
+                }
+            });
+        });
+
+        // Web sockets event callback
+        api.onmessage = function (msg, data) {
+            // handles events
+            if ("event" in data) {
+                console.log(data);
+                if (data.event == "TripScheduled") {
+                    $("#popup").show();
+                    $("#popup").fadeOut(3000);
+                }
+            }
+        }
+
+        // This function schedules a trip and sends the command to the web sockets api.
+        function schedule() {
+            var errorDiv = document.getElementById("nameError");
+            //var searchStrat = document.getElementById("search-strategy").value;
+            var searchStrat = "beeline";
+            errorDiv.innerHTML = "";
+            var name = $("#name").val();
+            if (name == "") {
+                errorDiv.innerHTML += '<p style="color: red">[!] Error, missing name...</p>'
+            }
+            if (trip.length < 2) {
+                errorDiv.innerHTML += '<p style="color: red">[!] Error, missing pickup and drop off location ...</p>'
+            }
+            if (name != "" && trip.length >= 2) {
+                var start = [trip[0][0] / ($("#map").width()), 1.0, trip[0][1] / ($("#map").height())];
+                var end = [trip[trip.length - 1][0] / ($("#map").width()), 1.0, trip[trip.length - 1][1] / ($("#map").height())];
+                console.log(start);
+                var scale = 0.705;
+                var min = { x: -2030.950927734375, y: 220.99996948242188, z: -1184.1085205078125 };
+                var max = { x: 2249.523193359375, y: 286.9197998046875, z: 1261.8768310546875 };
+
+                api.sendCommand("CreateEntity", {
+                    "type": "robot",
+                    "name": name,
+                    "mesh": "assets/model/robot.glb",
+                    "position": [(min.x + (max.x - min.x) * start[0]) * scale, 254.665 * start[1], (min.z + (max.z - min.z) * start[2]) * scale],
+                    "scale": [0.25, 0.25, 0.25],
+                    "direction": [1, 0, 0],
+                    "speed": 30.0,
+                    "radius": 1.0,
+                    "rotation": [0, 0, 0, 0]
+                });
+                api.sendCommand("ScheduleTrip", { name: name, start: [trip[0][0], trip[0][1]], end: [(min.x + (max.x - min.x) * end[0]) * scale, 254.665 * end[1], (min.z + (max.z - min.z) * end[2]) * scale], search: searchStrat });
+                var details = name + ": ";
+                for (var i = 0; i < trip.length; i++) {
+                    if (i != 0) {
+                        details += " ---> ";
+                    }
+                    details += "(" + trip[i][0].toFixed(1) + ", " + trip[i][1].toFixed(1) + ")";
+
+                }
+                $("#list").append("<p class='trip'>" + details + "</p>");
+
+                // reset the trip
+                trip = [];
+                $("#map").html("");
+                $("#name").val("");
+            }
+        }
+    </script>
+</body>
+
+</html>
