@@ -42,3 +42,9 @@ Course materials including slides, code, workshop, lab, and projects
   - **Liskov substitution principle**: Objects should be replaceable with instances of their subtypes without altering program correctness.
   - **Interface segregation principle**: Many client-specific interfaces better than one general-purpose interface.
   - **Dependency inversion**: High-level modules should not depend on low-level modules. Both should depend on abstractions.
+
+### Intro to SE
+- requirements:
+  - functional requirements: data storage, any process that transforms data, and any outputs that it produces
+  - non-functional: performance, security and access, technical constraint, project constraint, organizational constraint, usability and reliability issues
+- Request Engineering (RE): about functional requirements

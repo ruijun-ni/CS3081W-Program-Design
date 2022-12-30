@@ -1,3 +1,5 @@
+A great class note about Git: https://missing.csail.mit.edu/2020/version-control/
+
 # 3081 Lab 1: Git
 _(Due: Thursday, September. 15, 2022 @ 11:59pm)_
 
