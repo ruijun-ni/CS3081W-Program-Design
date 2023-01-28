@@ -1,7 +1,10 @@
-# CSci3081W-Program-Design
+# CSCI 3081W - Program Design and Development
 Course materials including slides, code, workshop, lab, and projects
 
+## Disclaimer
+This is a personal repository of course materials for educational purposes only and should not be used as official or definitive information. Any codes provided should be used for reference only and should not be copied and submitted as homework or assignments. Plagiarism is a serious offence and any such actions will be dealt with accordingly.
 
+---
 ### OOP
 - Classes are **Abstract Data Types (ADT)** with **inheritance** and **polymorphism**.
 - Abstract data types (ADTs) are the foundation for object oriented programming (OOP).
